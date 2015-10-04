@@ -1,0 +1,115 @@
+//
+// Text
+// --------------------------------------------------
+.text-xs,
+.text-sm,
+.text-md,
+.text-lg {
+	text-rendering: optimizeLegibility;
+}
+.text-xs {
+	font-size: 50%;
+}
+.text-sm {
+	font-size: 70%;
+	font-weight: bold;
+}
+.text-md {
+	font-size: 80%;
+}
+.text-lg {
+	font-size: 110%;
+}
+.text-xl {
+	font-size: 120%;
+}
+.text-xxl {
+	font-size: 130%;
+}
+.text-30 {
+	font-size: 30px;
+}
+.text-50 {
+	font-size: 50px;
+}
+.text-date {
+	.text-muted;
+	.text-sm;
+	.pull-right;
+}
+.text-light {
+	font-weight: normal;
+}
+.text-em {
+	font-style: italic;
+}
+.text-proxima {
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.text-frieght {
+	font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.media-event {
+	.pull-left;
+	.text-center;
+
+	.event-day {
+		.text-lg;
+		color: @gray;
+	}
+	.event-month {
+		.text-md;
+	}
+}
+h1,h2,h3,h4,
+.h1,.h2,.h3,.h4 {
+	text-transform: uppercase;
+}
+@media (max-width: @screen-xs-max) {
+	.icon-super {
+		font-size: 50px;
+	}
+	.content {
+		h1,.h1 {
+			font-size: 1.2em;
+		}
+		h2,.h2 {
+			font-size: 1em;
+		}
+		h3,.h3,h4,.h4 {
+			font-size: 1em;
+		}
+		p {
+			font-size: 1em;
+		}
+	}
+	.blog {
+		.content {
+			h1,.h1 {
+				font-size: 2em;
+			}
+			h2,.h2 {
+				font-size: 1.8em;
+			}
+			h3,.h3,h4,.h4 {
+				font-size: 1.7em;
+				small {
+					.clearfix;
+				}
+			}
+			p {
+				font-size: 1.1em;
+			}
+		}
+	}
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	.icon-super {
+		font-size: 100px;
+	}
+}
+@media (min-width: @screen-md-min) {
+	.icon-super {
+		font-size: 150px;
+	}
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Joomla 3.0</title>
+<link href="../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/bootstrap.extended.css" rel="stylesheet" type="text/css" />
+<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- Top Navigation -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+			</a> 
+			<a class="brand" href="./site/index.html">Joomla 3.0</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="./site/index.html">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="./docs.html#banners">Banners</a></li>
+							<li class=""><a href="./docs.html#contact">Contact</a></li>
+							<li class=""><a href="./com_content.html">Content</a></li>
+							<li class=""><a href="./docs.html#finder">Finder</a></li>
+							<li class=""><a href="./docs.html#mailto">Mailto</a></li>
+							<li class=""><a href="./docs.html#media">Media</a></li>
+							<li class=""><a href="./docs.html#newsfeeds">Newsfeeds</a></li>
+							<li class=""><a href="./docs.html#search">Search</a></li>
+							<li class=""><a href="./docs.html#users">Users</a></li>
+							<li class=""><a href="./docs.html#weblinks">Weblinks</a></li>
+							<li class=""><a href="./docs.html#wrapper">Wrapper</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse --> 
+		</div>
+	</div>
+</div>
+<!-- Container -->
+<div class="container">
+	<div id="overview" class="hero-unit">
+		<h1>Welcome to Joomla 3.0</h1>
+		<p class="lead">Dozens of reusable components are built from Bootstrap to provide navigation, alerts, popovers, and much more. This is what we think Joomla can become. With support we can make this happen quickly.</p>
+	</div>
+	<div class="page-header">
+		<h1>Strategy <small>Lets do this together</small></h1>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>The Problem</h2>
+			<p>The community of Joomla developers have always struggled with the tools they have been given in the Joomla API, and end up innovating outside the core, essentially creating their own UI kits. The result is the current disjointed, nonstandard set of component interfaces that all have different design patterns and usability issues.</p>
+		</div>
+		<div class="span4">
+			<h2>The Vision</h2>
+			<p>The vision of the JUX will improve the daily lives of all Joomla users: designers, developers (core and community), site administrators. </p>
+			<p>With proper standards and a set of UI tools, designers can more rapidly prototype wireframes and flows.</p>
+		</div>
+		<div class="span4">
+			<h2>The Framework</h2>
+			<p>For Joomla 3.0 we'd like to use the Bootstrap Framework. This comes with the majority of css, html, and javascript that any developer or designer would need. </p>
+			<p>Of course we know this will not allow for all cases but Bootstrap gives you the ability to customize as you see fit.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span4">
+			<h2>The Pros</h2>
+			<p>3rd party developers will have this api at their fingertips. What they once didn't have designers, they no longer will need. This will unify the look of Joomla and it's extensions and give developers the freedom to no longer need to make their own cusom UI.</p>
+		</div>
+		<div class="span4">
+			<h2>The Cons</h2>
+			<p>Some developers may feel locked into this UI, but for most it's a way to develop rapidly. If you still don't want to follow the UI standards you don't have to.</p>
+		</div>
+		<div class="span4">
+			<h2>The Future</h2>
+			<p>This will set Joomla ahead of the curve, and send it using lightspeed. Where other CMS have just started working on UX, Joomla will already be ahead.</p>
+		</div>
+	</div>
+	<hr />
+	<div class="footer">
+		
+	</div>
+</div>
+<!-- Le javascript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery-1.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown()
+  $('.collapse').collapse('show')
+  $('#myModal').modal('hide')
+  $('.typeahead').typeahead()
+  $('.tabs').button()
+  $(".alert-message").alert()
+  $(window).bind("load resize", function() {
+   var windowHeight = "height:"+($(window).height()-45)+"px"; // height of full document
+   var windowWidth = "width:"+($(window).width()-30)+"px"; // width of full document
+   $('.side-nav, .fluid-content.main, .modal.full').attr('style', windowHeight);
+  });
+</script>
+</body>
+</html>

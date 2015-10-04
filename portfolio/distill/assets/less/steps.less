@@ -1,0 +1,86 @@
+/* Wizard Steps */
+.steps {
+    margin-top: 10px;
+    margin-left: 15px;
+
+    li {
+        margin-left: -15px;
+
+        &:first-child a:before {
+            border: none;
+        }
+        &:first-child a {
+            padding-left:15px;   
+            -webkit-border-radius: 4px 0 0 4px;
+               -moz-border-radius: 4px 0 0 4px;
+                    border-radius: 4px 0 0 4px;
+        }
+        &:last-child a {
+            -webkit-border-radius: 0 4px 4px 0;
+               -moz-border-radius: 0 4px 4px 0;
+                    border-radius: 0 4px 4px 0;
+        }
+    }
+
+    a {
+        padding: 10px 12px 10px 25px;
+        margin-right: 5px;
+        background: @panel-footer-bg;
+        position: relative;
+        display: inline-block;
+        text-decoration:none;
+        color: @gray-light;
+
+        &:hover {
+            cursor: pointer;
+            cursor: hand;
+            color: @gray;
+            background: darken(@panel-footer-bg, 10%);
+        }
+
+        &:before {
+            width: 0;
+            height: 0;
+            border-top: 20px inset transparent;
+            border-bottom: 20px inset transparent;
+            border-left: 20px solid #fff;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+        }
+
+        &:after {
+            width: 0;
+            height: 0;
+            border-top: 20px inset transparent;
+            border-bottom: 20px inset transparent;
+            border-left: 20px solid @panel-footer-bg;
+            position: absolute;
+            content: "";
+            top: 0;
+            right: -19px;
+            z-index: 2;
+        }
+        &:hover:after {
+            border-left: 20px solid darken(@panel-footer-bg, 10%);
+        }
+    }
+
+    .active a {
+        background: @brand-info;
+        color: #fff;
+
+        &:hover {
+            background: @brand-primary;
+        }
+
+        &:after {
+            border-left-color: @brand-info;
+        }
+
+        &:hover:after {
+            border-left-color: @brand-primary;
+        }
+    }
+}

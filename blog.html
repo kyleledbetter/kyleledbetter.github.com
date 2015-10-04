@@ -1,0 +1,56 @@
+---
+layout: blank
+title : Blog
+header : Blog
+group: navigation
+alias: [/kyles-blog.html]
+---
+{% include JB/setup %}
+
+
+<section id="main" class="mast mast-trans mast-head">
+	<div class="container">
+		<div data-spy="affix" data-offset-top="30" class="page-title">
+			<h1>Better Than Led</h1>
+			<h2 class="text-light">the blog of Kyle Ledbetter</h2>
+			<hr class="separator" />
+			<div class="visible-xs">
+				<a href="{{ HOME_PATH }}" data-toggle="tooltip" title="Back to homepage">Back to kyleledbetter.com</a>
+			</div>
+		</div>
+	</div>
+</section>
+<div id="header" class="header">
+	<div class="container text-center">
+		<a class="sidebar-toggle pull-left btn btn-lg btn-none visible-xs"><span aria-hidden="true" class="icon-menu"></span></a>
+		<ul class="list-inline hidden-xs list-nav">
+			<li><a href="index.html#about" data-toggle="tooltip" title="Who's this dude?" class="smooth">About</a></li>
+			<li><a href="index.html#portfolio" data-toggle="tooltip" title="Let's see whatcha got" class="smooth">Portfolio</a></li>
+			<li><a href="index.html#blog" data-toggle="tooltip" title="Got somethin' to say?" class="smooth">Blog</a></li>
+			<li class="list-item-logo"><a href="/index.html" class="smooth" data-toggle="tooltip" title="Back to homepage"><span aria-hidden="true" class="logo"></span></a></li>
+			<li><a href="index.html#skills" data-toggle="tooltip" title="Any cool tricks?" class="smooth">Skills</a></li>
+			<li><a href="index.html#work" data-toggle="tooltip" title="Proof's in the pudding" class="smooth">Work</a></li>
+			<li><a href="" class="contact-toggle" data-toggle="tooltip" title="Let's chat">Contact</a></li>
+		</ul>
+	</div>
+</div>
+<section id="blog" class="mast mast-white">
+	<div class="container">
+		<div class="row push-top">
+			<div class="col-sm-9 col-sm-offset-1">
+				{% for post in site.posts %}
+					<div class="row text-left">
+						<div class="col-sm-5">
+							<h3><a href="{{ BASE_PATH }}{{ post.url }}" class="text-inverse">{{ post.title }}</a></h3>
+							<div class="text-lg text-muted">{{ post.date | date_to_string }}</div>
+						</div>
+						<div class="col-sm-7">
+							<div class="text-xxl">{{ post.content | strip_html | truncatewords:50}}</div>
+						</div>
+					</div>
+					<hr />
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

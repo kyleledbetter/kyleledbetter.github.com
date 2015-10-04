@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Shop Cart</title>
+	<link href="../../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="../../../assets/css/bootstrap.extended.css" rel="stylesheet" type="text/css" />
+	<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css" />
+	<link href="../../../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+	<link rel="apple-touch-icon" href="../../assets/ico/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../assets/ico/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../assets/ico/apple-touch-icon-114x114.png">
+</head>
+<body>
+<!-- Admin Toolbar  -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+			</a> 
+			<span class="brand">admin toolbar</span>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="divider-vertical"></li>
+					<li><a href="#" class="btn btn-navbar tip-hide" data-toggle="tip-small"><i class="icon-info-sign icon-white"></i> Show Tooltips</a></li>
+					<li><a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".page-edit"><i class="icon-edit icon-white"></i> Edit</a></li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="divider-vertical"></li>
+					<li><a class="btn btn-navbar" target="_blank" href="../../../admin/index.html"><i class="icon-lock icon-white"></i> Admin</a></li>
+					<li class="dropdown">
+		              <a href="#" class="btn btn-navbar dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> username <b class="caret"></b></a>
+		              <ul class="dropdown-menu">
+		                <li><a href="#">Profile</a></li>
+		                <li><a href="#">Edit Account</a></li>
+		                <li class="divider"></li>
+		                <li><a href="#">Sign out</a></li>
+		              </ul>
+		            </li>
+				</ul>
+			</div>
+			<!--/.nav-collapse --> 
+		</div>
+	</div>
+</div>
+<!-- Page Edit -->
+<div class="page-edit collapse out">
+	<div class="page-edit-inner">
+		<div class="container">
+			<form class="form-horizontal">
+				<div class="row">
+					<div class="span12">
+						<div class="tabbable">
+							<h3>Page Settings</h3>
+							<hr />
+							<ul class="nav nav-tabs nav-dark">
+								<li class="active"><a href="#general" data-toggle="tab">General</a></li>
+								<li><a href="#settings" data-toggle="tab">Settings</a></li>
+								<li><a href="#advanced" data-toggle="tab">Advanced</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="general">
+									<fieldset>
+										<div class="control-group">
+											<label id="jform_title-lbl" for="jform_title" class="hasTip required" title="">Page Title</label>
+											<div class="controls">
+												<input type="text" value="A Totally New User Experience" class="input-medium required" size="30" required="required">
+													<i class="icon-info-sign" rel="popover" data-original-title="This is your page title." data-placement="right"></i>
+												</a>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_alias-lbl" for="jform_alias" class="hasTip" title="">Page URL</label>
+											<div class="controls">
+												<div class="input-append">
+									                <input class="span3" value="article" id="jform_alias" size="20" type="text">
+									                <span class="add-on">.html</span>
+									              </div>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_title-lbl" for="jform_menu" class="hasTip required" title="">Menu Name</label>
+											<div class="controls">
+												<input type="text" value="Article" class="input-medium required" size="30" required="required">
+													<i class="icon-info-sign" rel="popover" data-original-title="This is your page title." data-placement="right"></i>
+												</a>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_title-lbl" for="jform_parent" class="hasTip required" title="">Menu Parent</label>
+											<div class="controls">
+												<select id="jform_menuid" name="jform[menuid]" class="inputbox required" aria-required="true" required="required">
+													<option value="14">- Top level</option>
+													<option value="15">- - Home</option>
+													<option value="16">- - About</option>
+													<option value="17">- - Contact</option>
+													<option value="18" selected="selected">- - Content</option>
+													<option value="19">- - Examples</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-actions">
+											<button type="submit" data-toggle="collapse" data-target=".page-edit" class="btn btn-primary">Save changes</button>
+											<button type="reset" data-toggle="collapse" data-target=".page-edit" class="btn">Cancel</button>
+										</div>
+									</fieldset>
+								</div>
+								<div class="tab-pane fade" id="settings">
+									<fieldset>
+										<div class="control-group">
+											<label id="jform_catid-lbl" for="jform_catid" class="hasTip required" title="">Category<span class="star">&nbsp;*</span></label>
+											<div class="controls">
+												<select id="jform_catid" name="jform[catid]" class="inputbox required" aria-required="true" required="required">
+													<option value="14">- Sample Data-Articles</option>
+													<option value="19">- - Joomla!</option>
+													<option value="20">- - - Extensions</option>
+													<option value="21" selected="selected">- - - - Components</option>
+													<option value="22">- - - - Modules</option>
+													<option value="64">- - - - - Content Modules</option>
+													<option value="65">- - - - - User Modules</option>
+													<option value="66">- - - - - Display Modules</option>
+													<option value="67">- - - - - Utility Modules</option>
+													<option value="75">- - - - - Navigation Modules</option>
+													<option value="23">- - - - Templates</option>
+													<option value="69">- - - - - Beez 20</option>
+													<option value="70">- - - - - Beez 5</option>
+													<option value="68">- - - - - Atomic</option>
+													<option value="24">- - - - Languages</option>
+													<option value="25">- - - - Plugins</option>
+													<option value="26">- - Park Site</option>
+													<option value="27">- - - Park Blog</option>
+													<option value="28">- - - Photo Gallery</option>
+													<option value="72">- - - - Animals</option>
+													<option value="73">- - - - Scenery</option>
+													<option value="29">- - Fruit Shop Site</option>
+													<option value="30">- - - Growers</option>
+													<option value="76">- - - Recipes</option>
+													<option value="9">- Uncategorised</option>
+													<option value="78">- Examples</option>
+													<option value="79">- Docs</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_state-lbl" for="jform_state" class="hasTip" title="">Status</label>
+											<div class="controls">
+												<select id="jform_state" name="jform[state]" class="inputbox" size="1">
+													<option value="1" selected="selected">Published</option>
+													<option value="0">Unpublished</option>
+													<option value="2">Archived</option>
+													<option value="-2">Trashed</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_access-lbl" for="jform_access" class="hasTip" title="">Access</label>
+											<div class="controls">
+												<select id="jform_access" name="jform[access]" class="inputbox" size="1">
+													<option value="1" selected="selected">Public</option>
+													<option value="2">Registered</option>
+													<option value="3">Special</option>
+													<option value="4">Customer Access Level (Example)</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_featured-lbl" for="jform_featured" class="hasTip" title="">Featured</label>
+											<div class="controls">
+												<select id="jform_featured" name="jform[featured]">
+													<option value="0" selected="selected">No</option>
+													<option value="1">Yes</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metadesc-lbl" for="jform_metadesc" class="hasTip" title="">Meta Description</label>
+											<div class="controls">
+												<textarea name="jform[metadesc]" id="jform_metadesc" cols="30" rows="3" class="inputbox"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metakey-lbl" for="jform_metakey" class="hasTip" title="">Meta Keywords</label>
+											<div class="controls">
+												<textarea name="jform[metakey]" id="jform_metakey" cols="30" rows="3" class="inputbox"></textarea>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+								<div class="tab-pane fade" id="advanced">
+									<fieldset>
+										<div class="control-group">
+											<label id="jform_language-lbl" for="jform_language" class="hasTip" title="">Language</label>
+											<div class="controls">
+												<select id="jform_language" name="jform[language]" class="inputbox">
+													<option value="*" selected="selected">All</option>
+													<option value="en-GB">English (UK)</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_id-lbl" for="jform_id" class="hasTip" title="">ID</label>
+											<div class="controls">
+												<input type="text" name="jform[id]" id="jform_id" value="1" class="readonly" size="10" readonly="readonly">
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metadata_robots-lbl" for="jform_metadata_robots" class="hasTip" title="">Robots</label>
+											<div class="controls">
+												<select id="jform_metadata_robots" name="jform[metadata][robots]">
+													<option value="" selected="selected">Use Global</option>
+													<option value="index, follow">Index, Follow</option>
+													<option value="noindex, follow">No index, follow</option>
+													<option value="index, nofollow">Index, No follow</option>
+													<option value="noindex, nofollow">No index, no follow</option>
+												</select>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metadata_author-lbl" for="jform_metadata_author" class="hasTip" title="">Author</label>
+											<div class="controls">
+												<input type="text" name="jform[metadata][author]" id="jform_metadata_author" value="" size="20">
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metadata_rights-lbl" for="jform_metadata_rights" class="hasTip" title="">Content Rights</label>
+											<div class="controls">
+												<textarea name="jform[metadata][rights]" id="jform_metadata_rights" cols="30" rows="2"></textarea>
+											</div>
+										</div>
+										<div class="control-group">
+											<label id="jform_metadata_xreference-lbl" for="jform_metadata_xreference" class="hasTip" title="">External Reference</label>
+											<div class="controls">
+												<input type="text" name="jform[metadata][xreference]" id="jform_metadata_xreference" value="" class="inputbox" size="20">
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Header -->
+<div class="header">
+	<div class="header-inner">
+		<div class="container"> 
+			<a class="brand pull-left" href="../../index.html">
+				<img src="../../assets/img/joomla.png" alt="Joomla" />
+			</a>
+			<ul class="nav nav-pills pull-right">
+				<li class=""><a href="../../index.html">Home</a></li>
+				<li><a href="../about.html">About</a></li>
+				<li><a href="../contact.html">Contact</a></li>
+				<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Content <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class=""><a href="article.html">Article</a></li>
+						<li class=""><a href="article-pagebreak.html">Article Page Breaks</a></li>
+						<li class=""><a href="blog.html">Blog</a></li>
+						<li class=""><a href="list.html">List</a></li>
+						<li class=""><a href="multi-column.html">Multi-column</a></li>
+						<li class=""><a href="table.html">Table</a></li>
+					</ul>
+				</li>
+				<li class="active dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Examples <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class=""><a href="../blog/index.html">Blog</a></li>
+						<li class=""><a href="../community/index.html">Community</a></li>
+						<li class=""><a href="../gallery/index.html">Gallery</a></li>
+						<li class="active"><a href="../shop/index.html">Shop</a></li>
+						<li class=""><a href="../events/index.html">Events</a></li>
+					</ul>
+				</li>
+			</ul>
+			<!--/.nav-collapse --> 
+		</div>
+	</div>
+</div>
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="span9">
+			<div class="page-header">
+				<h1>
+					Shopping Cart <small>items in your cart</small> 
+				</h1>
+			</div>
+			<p>
+				<a href="index.html" class="btn">Continue Shopping</a>
+			</p>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th> </th>
+						<th>Product</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<a href="product.html" class="thumbnail">
+						  		<img src="http://placehold.it/100x100" alt="">
+							</a>
+						</td>
+						<td>
+							<h4><a href="product.html">Product Name</a></h4>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...
+							</p>
+						</td>
+						<td>
+							<form method="post" action="">
+								<select class="span1">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</form>
+						</td>
+						<td>
+							$19.99
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="product.html" class="thumbnail">
+						  		<img src="http://placehold.it/100x100" alt="">
+							</a>
+						</td>
+						<td>
+							<h4><a href="product.html">Product Name</a></h4>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...
+							</p>
+						</td>
+						<td>
+							<form method="post" action="">
+								<select class="span1">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</form>
+						</td>
+						<td>
+							$19.99
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="well">
+				<div class="row-fluid">
+					<div class="span6">
+						<form class="form-small pull-left">
+						    <fieldset>
+						      <div class="control-group">
+						        <label class="control-label">Shipping Estimate</label>
+						        <div class="controls">
+						          <input class="span2" type="text" placeholder="Zipcode">
+						        </div>
+						      </div>
+						      <div class="control-group">
+						        <label class="control-label" for="prependedInput">Calculated Shipping</label>
+						        <div class="controls">
+						          <div class="input-prepend">
+						            <span class="add-on">$</span>
+						            <input class="span2" id="prependedInput" size="16" type="text">
+						          </div>
+						          <p class="help-block">Based on your zip code.</p>
+						        </div>
+						      </div>
+						    </fieldset>
+						  </form>
+					</div>
+					<div class="span6">
+						  <table class="table table-striped table-bordered">
+						  	<tbody>
+						  		<tr>
+						  			<td>Cart subtotal</td>
+						  			<td>$39.98</td>
+						  		</tr>
+						  		<tr>
+						  			<td>Free Shipping</td>
+						  			<td>$0.00</td>
+						  		</tr>
+						  	</tbody>
+						  	<tfoot>
+						  		<tr>
+						  			<td>Subtotal</td>
+						  			<td>$39.98</td>
+						  		</tr>
+						  	</tfoot>
+						  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="well">
+				<h4>Cart Summary</h4>
+				<hr />
+				<h3>Total</h3>
+				<h2>$38.89</h2>
+				<p class="label">Free Shipping</p>
+				<p class="help-block">Based on your zip code.</p>
+				<hr />
+				<form method="post" action="checkout.html">
+				  <button type="submit" class="btn btn-success btn-large">Check Out Now</button>
+				</form>
+			</div>
+			<div class="alert alert-info">
+				<h4 class="alert-heading">Cart Support</h4>
+				<p>Have questions? Don't hesitate to contact us!</p>
+				<p><a href="#"><i class="icon-envelope"></i> Email Us</a></p>
+				<p><a href="#"><i class="icon-comment"></i> Live Support</a></p>
+			</div>
+		</div>
+	</div>	
+	<hr />
+	<div class="footer">
+		<p class="pull-right"><a href="#top" id="back-top">Back to top</a></p>
+		<p>&copy; Copyright JUI Project 2012, All rights reserved.</p>
+	</div>
+</div>
+<!-- Image Thumbnail Modal -->
+<div id="thumbnail" class="modal fade">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Example of Work</h3>
+  </div>
+  <div class="modal-body">
+    <p><img src="http://placehold.it/543x300" alt=""></p>
+  </div>
+</div>
+<!-- Le javascript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../../assets/js/jquery-1.7.1.min.js"></script> 
+<script src="../../../assets/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+	$('.dropdown-toggle').dropdown()
+	$('.modal').modal('hide')
+	$('.tip').popover('hide')
+	$('.smalltip').tooltip('hide')
+	$('.typeahead').typeahead()
+	$('.tabs').button()
+	$(".alert-message").alert()
+	$(window).bind("load resize", function() {
+	var windowHeight = "height:"+($(window).height()-45)+"px"; // height of full document
+	var windowWidth = "width:"+($(window).width()-30)+"px"; // width of full document
+	$('.side-nav, .fluid-content.main, .modal.full').attr('style', windowHeight);
+	});
+	$(document).ready(function() {
+		$(".smalltip").hide();
+        $(".hidetip").click(function(){
+           $(".smalltip").toggle("slow");
+        });
+	});	
+	$('.carousel').carousel()
+</script>
+</body>
+</html>

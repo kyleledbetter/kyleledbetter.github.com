@@ -1,0 +1,61 @@
+//
+// Events
+// --------------------------------------------------
+
+.event {
+	background: #fff;
+	border: 1px solid @gray-lighter;
+	.box-shadow (1px 1px 1px  rgba(0,0,0, 0.1));
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 0;
+	float: left;
+	position: relative;
+
+	&.pull-left {
+		margin-right: 5px;
+	}
+}
+.month,
+.day {
+	display: block;
+	font-weight: bold;
+	line-height: 1;
+	text-align: center;
+}
+.month {
+	border-top: 1em solid @brand-danger;
+	font-size: .6em;
+	letter-spacing: .2em;
+	padding: .55em 1em 0;
+	text-transform: uppercase;
+}
+.day {
+	font-size: 1.2em;
+	line-height: .9;
+	padding: 0 0 .15em;
+}
+.year {
+	display: block;
+	position: absolute;
+	left: -999em;
+}
+.event::before,
+.event::after {
+	content: "\00A0";
+	border: 1px solid @gray-light;
+	border-right-color: #f1f1f4;
+	border-bottom-color: #f1f1f4;
+	border-radius: 2px;
+	display: block;
+	width: 0;
+	height: .5em;
+	position: absolute;
+	top: -.3em;
+	}
+.event::before {
+	left: .65em;
+}
+.event::after {
+	right: .65em;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Distiller.ee</title>
+	<link href="assets/css/application.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond/respond.min.js"></script>
+	<![endif]-->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+	<link href="assets/ico/favicon.png" rel="shortcut icon" type="image/x-icon" />
+	<script src="assets/js/modernizr.custom.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=tomorrow"></script>
+</head>
+<body class="no-touch">
+	<header class="header header-warning">
+		<a href="users.html" class="h4"><span aria-hidden="true" class="icon-users"></span> <span class="user-name">Users</span></a>
+	</header>
+	<header class="header header-info">
+		<a href="metrics.html" class="h4"><span aria-hidden="true" class="icon-chart"></span> <span class="user-name">Metrics</span></a>
+	</header>
+	<header class="header header-primary">
+		<a href="index.html" class="h4"><span aria-hidden="true" class="icon-dashboard"></span> <span class="user-name">Dashboard</span></a>
+	</header>
+	<header class="header header-danger">
+		<a class="sidebar-toggle pull-left btn btn-sm btn-trans"><span aria-hidden="true" class="icon-menu-3"></span></a>
+		<a class="aside-toggle pull-right btn btn-trans btn-sm"><span aria-hidden="true" class="icon-search"></span></a>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" class="btn btn-sm btn-danger btn-round" href="#"><span class="text-md">12</span></a>
+			<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">Tobias Funke added you to a chat: Get My Rocks Off<div class="text-muted">3 hours ago</div></a></li>
+				<li><a href="#">Gob kicked you from a chat: Franklin's Friends<div class="text-muted">7 hours ago</div></a></li>
+				<li><a href="#">Lucille Bluth added you to a chat: Lucille 2<div class="text-muted">2 days ago</div></a></li>
+				<li><a href="#">George Michael kicked you from a chat: Dorm<div class="text-muted">3 days ago</div></a></li>
+				<li><a href="#">Barry Zuckerhorn added you to a chat: Don't Tell Michael<div class="text-muted">4 days ago</div></a></li>
+				<li class="divider"></li>
+				<li><a href="#" class="text-center"><span aria-hidden="true" class="icon-ok"></span> Mark all as read</a></li>
+			</ul>
+		</div>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" href="#" class="h3"><img class="img-circle" src="assets/images/avatars/michael_128.jpg" width="20" alt="..."> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">View Profile</a></li>
+				<li><a href="#">Edit Account</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Sign Out</a></li>
+			</ul>
+		</div>
+		<div class="dropdown dropdown-title">
+			<a href="#" class="h4 header-toggle"><span aria-hidden="true" class="icon-cube4"></span> <span class="user-name">Data Sources</span> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="index.html"><span aria-hidden="true" class="icon-dashboard"></span> Dashboard</a></li>
+				<li><a href="sources.html"><span aria-hidden="true" class="icon-cube4"></span> Data Sources</a></li>
+				<li><a href="metrics.html"><span aria-hidden="true" class="icon-chart"></span> Metrics</a></li>
+				<li><a href="users.html"><span aria-hidden="true" class="icon-users"></span> Users</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- begin content -->
+	<div class="content">
+		<div class="page-header">
+			<h2>New Source <small>add an incoming data source</small></h2>
+		</div>
+		<div class="row">
+			<!-- begin column -->
+			<div class="col-md-7">
+				<h3>Source Info</h3>
+				<form role="form">
+					<div class="form-group">
+						<span class="text-sm text-muted pull-right">50 char max</span>
+						<label for="sourceName">Source Name</label>
+						<input type="text" class="form-control" id="sourceName" placeholder="Enter name">
+					</div>
+					<div class="form-group">
+						<span class="text-sm text-muted pull-right">255 char max</span>
+						<label for="sourceDesc">Source Description</label>
+						<textarea class="form-control" id="sourceDesc" placeholder="Enter short desc"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="contactName">Contact Name</label>
+						<input type="text" class="form-control" id="contactName" placeholder="Name of contact">
+					</div>
+					<div class="form-group">
+						<label for="contactEmail">Contact Email</label>
+						<input type="email" class="form-control" id="contactEmail" placeholder="Contact email">
+					</div>
+					<div class="form-group">
+						<span class="text-sm text-muted pull-right">optional</span>
+						<label for="sourceUrl">Source Url</label>
+						<input type="text" class="form-control" id="sourceUrl" placeholder="http://">
+					</div>
+					<hr />
+					<h3>Notifications &amp; Alerts</h3>
+					<div class="form-group">
+						<p>
+							<input type="checkbox" name="emailSummary" checked /> 
+							<label for="emailSummary">Email daily activity summary</label>
+						</p>
+						<p>
+							<input type="checkbox" name="emailAlerts" /> 
+							<label for="emailAlerts">Email alerts for spikes</label>
+						</p>
+					</div>
+				</form>
+			</div>
+			<!-- end column -->
+			<!-- begin column -->
+			<div class="col-md-5">
+				<h3>API Key &amp; Setup</h3>
+				<div class="well">
+					<h4>API Key</h4>
+					<pre class="text-warning">2k3idl2-asd2-sid9-283l</pre>
+					<hr />
+					<h4>Setup Instructions</h4>
+					<div class="form-group">
+						<h5><span class="label label-danger">1</span> Choose client:</h5>
+						<p>Distilleree can be used with any language, here are examples for most popular languages. <a href="#">View docs</a></p>
+						<select class="form-control">
+							<option>Choose language</option>
+							<option>Java</option>
+							<option>Python</option>
+							<option>Objective-C</option>
+							<option>iOS</option>
+							<option>Android</option>
+							<option>JavaScript</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<h5><span class="label label-danger">2</span> Example Code:</h5>
+						<p>Here's some example code you can deploy with the selected language to start tracking events. <a href="#">View docs</a></p>
+						<pre class="prettyprint">&lt;script&gt;
+	//example code
+&lt;/script&gt;</pre>
+					</div>
+					<div class="form-group">
+						<h5><span class="label label-danger">3</span> Test Connection:</h5>
+						<div class="alert alert-warning clearfix">
+							<a href="#" class="btn btn-xs btn-warning pull-right">Check</a>
+							We are not currently receiving data.
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end column -->
+		</div>
+		<hr />
+		<footer class="text-center text-sm text-muted">
+			<p>&copy; 2014 Distilleree, Inc.</p>
+		</footer>
+	</div>
+	<!-- end content -->
+	<!-- begin bottom nav -->
+	<nav class="navbar navbar-default navbar-fixed-bottom text-center" role="navigation">
+		<div class="btn-toolbar pull-right">
+			<div class="btn-group">
+				<a href="measure-metrics.html" class="btn btn-default">Next</a>
+			</div>
+			<div class="btn-group">
+				<a href="sources.html" class="btn btn-primary">Save</a>
+			</div>
+		</div>
+		<div class="btn-toolbar pull-left">
+			<div class="btn-group">
+				<a href="sources.html" class="btn btn-danger">Cancel</a>
+			</div>
+			<div class="btn-group">
+				<a href="sources.html" class="btn btn-default">Back</a>
+			</div>
+		</div>
+		<ol class="list-inline steps">
+			<li class="active"><a href="new-source.html">Info &amp; Setup</a></li>
+			<li><a href="measure-metrics.html">Measure Metrics</a></li>
+			<li><a href="persist-data.html">Persist Data</a></li>
+		</ol>
+	</nav>
+	<!-- end bottom nav -->
+	<!-- begin sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-heading">
+			<a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<a class="sidebar-brand" href="#"><span aria-hidden="true" class="icon-health icon-distilleree"></span> DISTILLER.ee</a>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class=""><a href="index.html"><span aria-hidden="true" class="icon-dashboard text-primary"></span> Dashboard</a></li>
+			<li class="active"><a href="sources.html"><span aria-hidden="true" class="icon-cube4 text-danger"></span> Data Sources</a></li>
+			<li class=""><a href="metrics.html"><span aria-hidden="true" class="icon-chart text-info"></span> Metrics</a></li>
+			<li class=""><a href="users.html"><span aria-hidden="true" class="icon-users text-warning"></span> Users</a></li>
+		</ul>
+		<hr />
+	</div>
+	<!-- end sidebar -->
+
+	<!-- begin aside -->
+	<div class="aside">
+		<div class="aside-heading">
+			<a class="aside-toggle pull-left btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<form class="aside-form" role="search">
+				<input type="text" class="form-control input-small" placeholder="Search">
+			</form>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class="nav-heading">Tags</li>
+		</ul>
+		<ul class="tags">
+			<li><a href="#" class="tag">task</a></li>
+			<li><a href="#" class="tag">file</a></li>
+			<li><a href="#" class="tag">event</a></li>
+			<li><a href="#" class="tag">reminder</a></li>
+			<li><a href="#" class="tag">html</a></li>
+			<li><a href="#" class="tag">css</a></li>
+			<li><a href="#" class="tag">javascript</a></li>
+			<li><a href="#" class="tag">angular</a></li>
+			<li><a href="#" class="tag">jade</a></li>
+			<li><a href="#" class="tag">node</a></li>
+			<li><a href="#" class="tag">express</a></li>
+			<li><a href="#" class="tag">ruby</a></li>
+			<li><a href="#" class="tag">rails</a></li>
+			<li><a href="#" class="tag">product</a></li>
+			<li><a href="#" class="tag">ux</a></li>
+		</ul>
+	</div>
+	<!-- end aside -->
+	<!-- begin modal -->
+	<div class="modal fade modal-chat-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object img-circle" src="assets/images/avatars/tobias_128.jpg" alt="..." width="28">
+						</a>
+						<div class="media-body">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4>Tobias Funke</h4>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<h5 class="text-large">Well, Michael, you really are quite the Cupid, aren’t you? I tell you, you can sink your arrow into my buttocks any time.</h5>
+					<div class="text-muted">12:48 PM - 9/09/2013</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end modal -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/application.js"></script>
+
+	<link href="assets/icheck/square/grey.css" rel="stylesheet">
+	<script src="assets/js/jquery.icheck.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('input[type=checkbox], input[type=radio]').iCheck({
+			checkboxClass: 'icheckbox_square-grey pull-left',
+			radioClass: 'iradio_square-grey',
+			increaseArea: '20%' // optional
+		});
+	});
+	</script>
+</body>
+</html>

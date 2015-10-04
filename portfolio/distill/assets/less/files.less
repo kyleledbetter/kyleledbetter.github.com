@@ -1,0 +1,117 @@
+//
+// DEFAULT FILE TYPE ICON
+// ======================
+//
+
+@colorDefault: #bbb;
+
+// Main body of the icon
+.file-type{
+	position: relative;
+	margin-top: 10px;
+	display: inline-block;
+	background-color: @colorDefault;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 35px;
+	text-transform: uppercase;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	color: #fff;
+	font-size: 10px;
+	letter-spacing: 1px;
+	.box-shadow (1px 1px 1px  rgba(0,0,0, 0.1));
+
+	&.pull-left {
+		margin-right: 5px;
+	}
+	&:hover {
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+	}
+}
+
+// Top area of icon, missing top-right corner
+.file-type:before
+{content: '';
+width: 40px;
+height: 0;
+position: absolute;
+bottom: 100%;
+top: -10px;
+left: 0;
+border-style: solid;
+border-width: 0 10px 10px 0;
+border-color: transparent;
+border-bottom-color: @colorDefault;
+background-color: transparent !important;}
+
+// Folder corner overlay
+.file-type:after
+{content: '';
+width: 0;
+height: 0;
+position: absolute;
+bottom: 100%;
+right: 0;
+border-style: solid;
+border-width: 5px;
+border-color: transparent;
+border-left-color: #000;
+border-bottom-color: #000;
+opacity: .3;}
+
+
+//
+// CUSTOM ICON COLOURS
+// ===================
+//
+
+.file-type-psd,
+.file-type-psd:before
+{@colorPSD: #c51e09;
+background-color: @colorPSD;
+border-bottom-color: @colorPSD;}
+
+.file-type-pdf,
+.file-type-pdf:before
+{@colorPDF: #c0392b;
+background-color: @colorPDF;
+border-bottom-color: @colorPDF;}
+
+.file-type-txt,
+.file-type-txt:before
+{@colorTXT: #777;
+background-color: @colorTXT;
+border-bottom-color: @colorTXT;}
+
+.file-type-html,
+.file-type-html:before
+{@colorHTML: #2c9864;
+background-color: @colorHTML;
+border-bottom-color: @colorHTML;}
+
+.file-type-css,
+.file-type-css:before
+{@colorCSS: #c78d4a;
+background-color: @colorCSS;
+border-bottom-color: @colorCSS;}
+
+.file-type-ppt,
+.file-type-ppt:before
+{@colorPPT: #d35400;
+background-color: @colorPPT;
+border-bottom-color: @colorPPT;}
+
+.file-type-doc,
+.file-type-doc:before
+{@colorDOC: #2980b9;
+background-color: @colorDOC;
+border-bottom-color: @colorDOC;}
+
+.file-type-xls,
+.file-type-xls:before
+{@colorXLS: #27ae60;
+background-color: @colorXLS;
+border-bottom-color: @colorXLS;}

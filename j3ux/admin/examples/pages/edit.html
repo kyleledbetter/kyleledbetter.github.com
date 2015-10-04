@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="admin">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Joomla 3.0</title>
+<link href="../../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap.extended.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+
+	<!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/ico/apple-touch-icon-114x114.png">
+    
+</head>
+<body>
+<!-- Top Navigation -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="../../index.html">Joomla 3.0</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="../../index.html">Dashboard</a></li>
+					<li class="active"><a href="../../examples/pages">Pages</a></li>
+					<li><a href="../../examples/content">Content</a></li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Extensions <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/blog">Blog</a></li>
+							<li class=""><a href="../../examples/community">Community</a></li>
+							<li class=""><a href="../../examples/gallery">Gallery</a></li>
+							<li class=""><a href="../../examples/shop">Shop</a></li>
+							<li class=""><a href="../../examples/events">Events</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/forms">Forms</a></li>
+							<li class=""><a href="../../examples/rss">RSS Feeds</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/extensions">Manage Extensions</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/users">Users</a></li>
+							<li class=""><a href="../../examples/permissions">Permissions</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/documents">Documents</a></li>
+							<li class=""><a href="../../examples/cache">Cache</a></li>
+							<li class=""><a href="../../examples/versions">Versions</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/settings">Global Settings</a></li>
+							<li class=""><a href="../../examples/settings/core.html">Core Components</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/settings/extensions.html">Extensions</a></li>
+							<li class=""><a href="../../examples/settings/templates.html">Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Design <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/templates/">Site Templates</a></li>
+							<li class=""><a href="../../examples/templates/admin.html">Admin Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">firstname.lastname <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/account">Account</a></li>
+							<li class=""><a href="../../examples/account/edit.html">Edit Account</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/login">Sign Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Header -->
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<a class="logo" href="../../index.html">Joomla 3.0 Admin</a>
+			</div>
+			<div class="span10">
+				<form class="navbar-search">
+	      			<input type="text" class="search-query" placeholder="Search" style="margin: 0 auto;" data-provide="typeahead" data-items="10" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+	      		</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Subheader -->
+<div class="subhead">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<h1>Pages</h1>
+			</div>
+			<div class="span10">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						  Actions 
+						  <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						</ul>
+					</div>
+			        <div class="btn-group">
+			          <a class="btn" href="#"><i class="icon-file"></i> Copy</a>
+			          <a class="btn" href="#"><i class="icon-share-alt"></i> Move</a>
+			          <a class="btn" href="#"><i class="icon-remove"></i> Delete</a>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-calendar"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Publish</a></li>
+			        	  <li><a href="#">Unpublish</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-folder-open"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Category One</a></li>
+			        	  <li><a href="#">Category Two</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-inbox"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Archive</a></li>
+			        	  <li><a href="#">Unarchive</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-cog"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Config One</a></li>
+			        	  <li><a href="#">Config Two</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-th-list"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Sort by Title</a></li>
+			        	  <li><a href="#">Sort by Created date</a></li>
+			        	</ul>
+			        </div>
+			     </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="span2">
+		<!-- Begin Placeholder -->
+			<div class="btn-group">
+			  <a class="btn btn-large btn-primary btn-wide disabled" href="../../examples/pages/edit.html">
+			    Create Page
+			  </a>
+			</div>
+			<hr />
+			<div class="sidebar-nav">
+				<ul class="nav nav-list">
+	              <li class="nav-header">Submenu</li>
+	              <li class="active"><a href="#">Pages</a></li>
+	              <li><a href="#">Menus</a></li>
+	              <li class="nav-header">Filters</li>
+	              <li class="nav-filters">
+	              	<div class="btn-group">
+          	          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Select Status <span class="caret"></span></a>
+          	          <ul class="dropdown-menu">
+          	            <li><a href="#">Active</a></li>
+          	            <li><a href="#">Archived</a></li>
+          	            <li><a href="#">Trashed</a></li>
+          	            <li class="divider"></li>
+          	            <li><a href="#">All States</a></li>
+          	          </ul>
+          	        </div>
+					<hr />
+	              	<div class="btn-group">
+	                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Select Access <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                      <li><a href="#">Active</a></li>
+	                      <li><a href="#">Archived</a></li>
+	                      <li><a href="#">Trashed</a></li>
+	                      <li class="divider"></li>
+	                      <li><a href="#">All States</a></li>
+	                    </ul>
+	                  </div>
+					<hr />
+	              	<div class="btn-group">
+	                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Select Author <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                      <li><a href="#">Active</a></li>
+	                      <li><a href="#">Archived</a></li>
+	                      <li><a href="#">Trashed</a></li>
+	                      <li class="divider"></li>
+	                      <li><a href="#">All States</a></li>
+	                    </ul>
+	                  </div>
+					<hr />
+	              	<div class="btn-group">
+	                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Select Language <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                      <li><a href="#">Active</a></li>
+	                      <li><a href="#">Archived</a></li>
+	                      <li><a href="#">Trashed</a></li>
+	                      <li class="divider"></li>
+	                      <li><a href="#">All States</a></li>
+	                    </ul>
+	                  </div>
+	              </li>
+	              <li class="nav-header">Categories</li>
+	              <li><a href="#"><i class="icon-folder-open"></i> Category One</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory One</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory Two</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory Three</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	            </ul>
+            </div>
+        <!-- End Placeholder -->
+		</div>
+		<div class="span10">
+			<!-- Begin Placeholder -->
+			<form class="form-horizontal" action="com_pages.html">
+		        <fieldset>
+		          <ul id="tab" class="nav nav-tabs">
+	                  <li class="active"><a href="#general" data-toggle="tab">General</a></li>
+	                  <li class=""><a href="#settings" data-toggle="tab">Settings</a></li>
+  	                  <li class=""><a href="#advanced" data-toggle="tab">Advanced</a></li>
+	              </ul>
+	              <div id="myTabContent" class="tab-content">
+	                  <div class="tab-pane fade active in" id="general">
+	                    <div class="control-group">
+	                      <label class="control-label" for="input01">Page Title</label>
+	                      <div class="controls">
+	                        <input type="text" class="input-xlarge" id="input01">
+	                        <p class="help-block">This will appear as your header</p>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="optionsCheckbox">Private</label>
+	                      <div class="controls">
+	                        <label class="checkbox">
+	                          <input type="checkbox" id="optionsCheckbox" value="option1">
+	                          Hide this page from all groups (you can always publish later)
+	                        </label>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="select01">Page Type</label>
+	                      <div class="controls">
+	                        <select id="select01">
+	                          <option>What type of page is this?</option>
+	                          <option>Single Page</option>
+	                          <option>Content</option>
+	                          <option>Gallery</option>
+	                          <option>Forum</option>
+	                          <option>Blog</option>
+	                          <option>Project Manager</option>
+	                          <option>Shop</option>
+	                          <option>Form</option>
+	                        </select>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="multiSelect">Page Access</label>
+	                      <div class="controls">
+	                        <select multiple="multiple" id="multiSelect">
+	                          <option>Public</option>
+	                          <option>Registered</option>
+	                          <option>Editors</option>
+	                          <option>Admins</option>
+	                        </select>
+	                        <p class="help-block">Which groups can see this page?</p>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="textarea">Page notes</label>
+	                      <div class="controls">
+	                        <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="tab-pane fade" id="settings">
+	                    <div class="control-group">
+	                      <label class="control-label" for="input01">Page URL</label>
+	                      <div class="controls">
+	                        <input type="text" class="input-xlarge" id="input01"> .html
+	                        <p class="help-block">This will be your url (ex: page-title)</p>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="select01">Page Layout</label>
+	                      <div class="controls">
+	                        <select id="select01">
+	                          <option>Shop Home</option>
+	                          <option selected="selected">Shop Categories</option>
+	                          <option>Shop Search</option>
+	                          <option>Shop Cart</option>
+	                          <option>Shop Checkout</option>
+	                          <option>Shop User</option>
+	                          <option>Shop Registration</option>
+	                        </select>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="multiSelect">Shop Categories</label>
+	                      <div class="controls">
+	                        <select multiple="multiple" id="multiSelect">
+	                          <option>Free Templates</option>
+	                          <option>Pro Templates</option>
+	                          <option>Free Extensions</option>
+	                          <option>Pro Extensions</option>
+	                        </select>
+	                      </div>
+	                    </div>
+	                    <div class="control-group">
+	                      <label class="control-label" for="textarea">Page notes</label>
+	                      <div class="controls">
+	                        <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="tab-pane fade" id="advanced">
+	                    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+	                  </div>
+	              </div>
+		          <div class="form-actions">
+		            <button type="submit" class="btn btn-primary">Save changes</button>
+		            <button type="reset" class="btn">Cancel</button>
+		          </div>
+		        </fieldset>
+		      </form>
+			<!-- End Placeholder -->
+		</div>
+	</div>
+	<hr />
+	<div class="footer"> </div>
+</div>
+<!-- Le javascript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../../assets/js/jquery-1.7.1.min.js"></script> 
+<script src="../../../assets/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown()
+  $('.tip').tooltip()
+  $('.collapse').collapse('show')
+  $('#myModal').modal('hide')
+  $('.typeahead').typeahead()
+  $('.tabs').button()
+  $(".alert-message").alert()
+  $(window).bind("load resize", function() {
+   var windowHeight = "height:"+($(window).height()-45)+"px"; // height of full document
+   var windowWidth = "width:"+($(window).width()-30)+"px"; // width of full document
+   $('.side-nav, .fluid-content.main, .modal.full').attr('style', windowHeight);
+  });
+</script>
+</body>
+</html>

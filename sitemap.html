@@ -1,0 +1,14 @@
+---
+layout: page
+title: Sitemap 
+header: Sitemap
+group: 
+alias: [/z-sitemap.html]
+---
+{% include JB/setup %}
+
+<h2>All Pages</h2>
+<ul class="nav nav-stacked">
+	{% assign pages_list = site.pages %}
+	{% include JB/pages_list %}
+</ul>

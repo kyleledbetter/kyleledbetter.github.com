@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Distiller.ee</title>
+	<link href="assets/css/application.css" rel="stylesheet">
+	<!-- nvd3 -->
+	<style>
+		.chart svg {
+		min-width: 100px;
+		min-height: 100px;
+		}
+		svg.sparkline {
+		width: 300px;
+		height: 70px;
+		font-size: 12px;
+		margin-top: -6px;
+		margin-left: -60px;
+		}
+		.nv-series-1 {
+		stroke-dasharray: 3, 3;
+		}
+		.nvd3 .nv-axis path {
+		stroke: #ddd !important;
+		}
+		.nvd3 .nv-axis .nv-axisMaxMin text {
+		fill: #666 !important;
+		}
+		svg text {
+		fill: #999 !important;
+		}
+		.nv-indexLine {
+			fill: #d1492c !important;
+		}
+	</style>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond/respond.min.js"></script>
+	<![endif]-->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+	<link href="assets/ico/favicon.png" rel="shortcut icon" type="image/x-icon" />
+	<script src="assets/js/modernizr.custom.js"></script>
+</head>
+<body class="no-touch">
+	<header class="header header-warning">
+		<a href="users.html" class="h4"><span aria-hidden="true" class="icon-users"></span> <span class="user-name">Users</span></a>
+	</header>
+	<header class="header header-danger">
+		<a href="sources.html" class="h4"><span aria-hidden="true" class="icon-cube4"></span> <span class="user-name">Data Sources</span></a>
+	</header>
+	<header class="header header-primary">
+		<a href="index.html" class="h4"><span aria-hidden="true" class="icon-dashboard"></span> <span class="user-name">Dashboard</span></a>
+	</header>
+	<header class="header header-info">
+		<a class="sidebar-toggle pull-left btn btn-sm btn-trans"><span aria-hidden="true" class="icon-menu-3"></span></a>
+		<a class="aside-toggle pull-right btn btn-trans btn-sm"><span aria-hidden="true" class="icon-search"></span></a>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" class="btn btn-sm btn-danger btn-round" href="#"><span class="text-md">12</span></a>
+			<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">Tobias Funke added you to a chat: Get My Rocks Off<div class="text-muted">3 hours ago</div></a></li>
+				<li><a href="#">Gob kicked you from a chat: Franklin's Friends<div class="text-muted">7 hours ago</div></a></li>
+				<li><a href="#">Lucille Bluth added you to a chat: Lucille 2<div class="text-muted">2 days ago</div></a></li>
+				<li><a href="#">George Michael kicked you from a chat: Dorm<div class="text-muted">3 days ago</div></a></li>
+				<li><a href="#">Barry Zuckerhorn added you to a chat: Don't Tell Michael<div class="text-muted">4 days ago</div></a></li>
+				<li class="divider"></li>
+				<li><a href="#" class="text-center"><span aria-hidden="true" class="icon-ok"></span> Mark all as read</a></li>
+			</ul>
+		</div>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" href="#" class="h3"><img class="img-circle" src="assets/images/avatars/michael_128.jpg" width="20" alt="..."> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">View Profile</a></li>
+				<li><a href="#">Edit Account</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Sign Out</a></li>
+			</ul>
+		</div>
+		<div class="dropdown dropdown-title">
+			<a href="#" class="h4 header-toggle"><span aria-hidden="true" class="icon-chart"></span> <span class="user-name">Metrics</span> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="index.html"><span aria-hidden="true" class="icon-dashboard"></span> Dashboard</a></li>
+				<li><a href="sources.html"><span aria-hidden="true" class="icon-cube4"></span> Data Sources</a></li>
+				<li><a href="metrics.html"><span aria-hidden="true" class="icon-chart"></span> Metrics</a></li>
+				<li><a href="users.html"><span aria-hidden="true" class="icon-users"></span> Users</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- begin content -->
+	<div class="content">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="text-center">
+							<h3>Metric Name</h3>
+							<h1 style="font-size: 70px" class="odometer">492.12</h1>
+							<div class="row" style="font-size: 20px">
+								<div class="col-xs-1"></div>
+								<div class="col-xs-5">
+									<span class="text-success">
+										+4.21 <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+								</div>
+								<div class="col-xs-5">
+									<span class="text-success">
+										(+2.61%) <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+								</div>
+								<div class="col-xs-1"></div>
+							</div>
+							<hr />
+							<div class="text-sm text-muted">Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean eu leo quam.</div>
+						</div>
+					</div>
+					<div class="panel-footer text-center">
+						<span class="text-muted text-sm">24hr change as of 12:06 PM</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<form id="side_panel">
+							<div class="btn-toolbar">
+								<div class="dropdown pull-right">
+									<a href="#" class="btn btn-default btn-xs"><span aria-hidden="true" class="icon-calendar"></span> <span aria-hidden="true" class="caret"></span></a>
+								</div>
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default btn-xs" for="area">
+										<input type="radio" name="renderer" id="area" value="area"> <span aria-hidden="true" class="icon-chart"></span>
+									</label>
+									<label class="btn btn-default btn-xs" for="bar">
+										<input type="radio" name="renderer" id="bar" value="bar"> <span aria-hidden="true" class="icon-bars"></span>
+									</label>
+									<label class="btn btn-default btn-xs active" for="line">
+										<input type="radio" name="renderer" id="line" value="line" checked> <span aria-hidden="true" class="icon-stats"></span>
+									</label>
+									<label class="btn btn-default btn-xs" for="scatter">
+										<input type="radio" name="renderer" id="scatter" value="scatterplot"> <span aria-hidden="true" class="icon-resize-2"></span>
+									</label>
+								</div>
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default btn-xs active" for="stack">
+										<input type="radio" name="offset" id="stack" value="zero" checked> stack
+									</label>
+									<label class="btn btn-default btn-xs" for="stream">
+										<input type="radio" name="offset" id="stream" value="wiggle"> stream
+									</label>
+									<label class="btn btn-default btn-xs" for="pct">
+										<input type="radio" name="offset" id="pct" value="expand"> pct
+									</label>
+									<label class="btn btn-default btn-xs" for="value">
+										<input type="radio" name="offset" id="value" value="value"> value
+									</label>
+								</div>
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default btn-xs active" for="cardinal">
+										<input type="radio" name="interpolation" id="cardinal" value="zero" checked> cardinal
+									</label>
+									<label class="btn btn-default btn-xs" for="linear">
+										<input type="radio" name="interpolation" id="linear" value="linear"> linear
+									</label>
+									<label class="btn btn-default btn-xs" for="step">
+										<input type="radio" name="interpolation" id="step" value="step-after"> step
+									</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="panel-body">
+						<div id="chart1" class="chart with-transitions" style="height: 240px">
+						  <svg></svg>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<div id="slider"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- begin column -->
+			<div class="col-sm-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							Visits <small>grouped by browser</small>
+						</h3>
+					</div>
+					<div class="list-group list-group-striped">
+						<div class="list-group-item">
+							<div class="chart-metrics"><svg style="height: 85px;"></svg></div>
+						</div>
+						<div class="list-group-item">
+							<span class="pull-right">
+								Last 24 Hours
+							</span>
+							Name
+						</div>
+						<div class="list-group-item">
+							<div class="text-medium">Chrome</div>
+							<div class="progress progress-info">
+								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+									<span class="pull-right">8,253</span>
+								</div>
+							</div>
+						</div>
+						<div class="list-group-item">
+							<div class="text-medium">Firefox</div>
+							<div class="progress progress-warning">
+								<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+									<span class="pull-right">7,832</span>
+								</div>
+							</div>
+						</div>
+						<div class="list-group-item">
+							<div class="text-medium">Safari</div>
+							<div class="progress progress-success">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+									<span class="pull-right">6,283</span>
+								</div>
+							</div>
+						</div>
+						<div class="list-group-item">
+							<div class="text-medium">IE</div>
+							<div class="progress progress-danger">
+								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+									<span class="pull-right">4,283</span>
+								</div>
+							</div>
+						</div>
+						<div class="list-group-item">
+							<div class="text-medium">Opera</div>
+							<div class="progress progress-info">
+								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+									<span class="pull-right">3,928</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="btn btn-primary btn-block text-center">View All</a>
+				</div>
+			</div>
+			<!-- end column -->
+			<!-- begin column -->
+			<div class="col-sm-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Browsers</h3>
+					</div>
+					<table class="table table-striped" id="ID-rowTable"><thead class="text-sm"><tr class="em"><th class="xp " rowspan="1"><div class="km ID-checkControl ACTION-selectCheckControl TARGET-"><div></div></div></th><th class="og Odb ACTION-sort TARGET-analytics.browser ID-dimension-column-0 " rowspan="1" colspan="2"><div class="tub">Browser</div></th><th class="rk ACTION-sort TARGET-analytics.visits ID-metric-column-0 COLUMN-analytics.visits  Kc Fy">Visits<span class="Vq ID-metric-tooltip-0"><span class="ID-metric-tooltipcontent-0 B-nb-Kb"></span></span></th><th class="rk ACTION-sort TARGET-analytics.avgPageviews ID-metric-column-1 COLUMN-analytics.avgPageviews ">Pages / Visit<span class="Vq ID-metric-tooltip-1"><span class="ID-metric-tooltipcontent-1 B-nb-Kb"></span></span></th><th class="rk ACTION-sort TARGET-analytics.avgSessionTime ID-metric-column-2 COLUMN-analytics.avgSessionTime ">Avg. Visit Duration<span class="Vq ID-metric-tooltip-2"><span class="ID-metric-tooltipcontent-2 B-nb-Kb"></span></span></th><th class="rk ACTION-sort TARGET-analytics.percentNewVisits ID-metric-column-3 COLUMN-analytics.percentNewVisits ">% New Visits<span class="Vq ID-metric-tooltip-3"><span class="ID-metric-tooltipcontent-3 B-nb-Kb"></span></span></th><th class="rk ACTION-sort TARGET-analytics.bounceRate ID-metric-column-4 COLUMN-analytics.bounceRate ">Bounce Rate<span class="Vq ID-metric-tooltip-4"><span class="ID-metric-tooltipcontent-4 B-nb-Kb"></span></span></th></tr>
+					</thead><tbody><tr class="ID-row-0-0-0 pj ACTION-mouse TARGET-row-0-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-0" type="checkbox"></td><td class="xg"><span>1.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-0 ">Chrome</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">4,775</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">4.42</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:05:05</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">56.04%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">37.07%</td></tr><tr class="ID-row-1-0-0 Ej ACTION-mouse TARGET-row-1-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-1" type="checkbox"></td><td class="xg"><span>2.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-1 ">Firefox</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">4,047</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">4.16</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:04:54</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">56.61%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">36.67%</td></tr><tr class="ID-row-2-0-0 pj ACTION-mouse TARGET-row-2-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-2" type="checkbox"></td><td class="xg"><span>3.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-2 ">Safari</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">1,174</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">2.93</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:02:49</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">37.65%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">58.60%</td></tr><tr class="ID-row-3-0-0 Ej ACTION-mouse TARGET-row-3-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-3" type="checkbox"></td><td class="xg"><span>4.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-3 ">Internet Explorer</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">693</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">4.12</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:04:19</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">75.18%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">38.67%</td></tr><tr class="ID-row-4-0-0 pj ACTION-mouse TARGET-row-4-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-4" type="checkbox"></td><td class="xg"><span>5.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-4 ">Opera</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">176</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">2.66</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:02:53</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">72.16%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">58.52%</td></tr><tr class="ID-row-5-0-0 Ej ACTION-mouse TARGET-row-5-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-5" type="checkbox"></td><td class="xg"><span>6.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-5 ">Android Browser</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">92</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">3.12</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:04:10</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">70.65%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">51.09%</td></tr><tr class="ID-row-6-0-0 pj ACTION-mouse TARGET-row-6-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-6" type="checkbox"></td><td class="xg"><span>7.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-6 ">YaBrowser</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">40</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">2.82</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:03:23</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">42.50%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">47.50%</td></tr><tr class="ID-row-7-0-0 Ej ACTION-mouse TARGET-row-7-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-7" type="checkbox"></td><td class="xg"><span>8.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-7 ">Safari (in-app)</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">29</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">1.72</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:01:20</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">55.17%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">72.41%</td></tr><tr class="ID-row-8-0-0 pj ACTION-mouse TARGET-row-8-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-8" type="checkbox"></td><td class="xg"><span>9.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-8 ">Maxthon</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">17</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">3.41</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:04:02</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">64.71%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">29.41%</td></tr><tr class="ID-row-9-0-0 Ej ACTION-mouse TARGET-row-9-0-0"><td class="Tj"><input class="QR ID-checkbox ACTION-select TARGET-9" type="checkbox"></td><td class="xg"><span>10.</span></td><td class="ID-dimension-data-0 ki"><span class="GM  g ACTION-drilldown TARGET-0-9 ">Opera Mini</span></td><td class="ID-metric-data-0 COLUMN-analytics.visits Kc">11</td><td class="ID-metric-data-1 COLUMN-analytics.avgPageviews">2.64</td><td class="ID-metric-data-2 COLUMN-analytics.avgSessionTime">00:02:31</td><td class="ID-metric-data-3 COLUMN-analytics.percentNewVisits">100.00%</td><td class="ID-metric-data-4 COLUMN-analytics.bounceRate">36.36%</td></tr></tbody></table>
+					<a href="#" class="btn btn-primary btn-block text-center">View All</a>
+				</div>
+			</div>
+			<!-- end column -->
+		</div>
+		<hr />
+		<footer class="text-center text-sm text-muted">
+			<p>&copy; 2014 Distilleree, Inc.</p>
+		</footer>
+	</div>
+	<!-- end content -->
+
+	<!-- begin sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-heading">
+			<a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<a class="sidebar-brand" href="#"><span aria-hidden="true" class="icon-health icon-distilleree"></span> DISTILLER.ee</a>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class=""><a href="index.html"><span aria-hidden="true" class="icon-dashboard text-primary"></span> Dashboard</a></li>
+			<li class=""><a href="sources.html"><span aria-hidden="true" class="icon-cube4 text-danger"></span> Data Sources</a></li>
+			<li class="active"><a href="metrics.html"><span aria-hidden="true" class="icon-chart text-info"></span> Metrics</a></li>
+			<li class=""><a href="users.html"><span aria-hidden="true" class="icon-users text-warning"></span> Users</a></li>
+		</ul>
+		<hr />
+	</div>
+	<!-- end sidebar -->
+
+	<!-- begin aside -->
+	<div class="aside">
+		<div class="aside-heading">
+			<a class="aside-toggle pull-left btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<form class="aside-form" role="search">
+				<input type="text" class="form-control input-small" placeholder="Search">
+			</form>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class="nav-heading">Tags</li>
+		</ul>
+		<ul class="tags">
+			<li><a href="#" class="tag">task</a></li>
+			<li><a href="#" class="tag">file</a></li>
+			<li><a href="#" class="tag">event</a></li>
+			<li><a href="#" class="tag">reminder</a></li>
+			<li><a href="#" class="tag">html</a></li>
+			<li><a href="#" class="tag">css</a></li>
+			<li><a href="#" class="tag">javascript</a></li>
+			<li><a href="#" class="tag">angular</a></li>
+			<li><a href="#" class="tag">jade</a></li>
+			<li><a href="#" class="tag">node</a></li>
+			<li><a href="#" class="tag">express</a></li>
+			<li><a href="#" class="tag">ruby</a></li>
+			<li><a href="#" class="tag">rails</a></li>
+			<li><a href="#" class="tag">product</a></li>
+			<li><a href="#" class="tag">ux</a></li>
+		</ul>
+	</div>
+	<!-- end aside -->
+	<!-- begin modal -->
+	<div class="modal fade modal-chat-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object img-circle" src="assets/images/avatars/tobias_128.jpg" alt="..." width="28">
+						</a>
+						<div class="media-body">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4>Tobias Funke</h4>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<h5 class="text-large">Well, Michael, you really are quite the Cupid, aren’t you? I tell you, you can sink your arrow into my buttocks any time.</h5>
+					<div class="text-muted">12:48 PM - 9/09/2013</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end modal -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/application.js"></script>
+
+
+
+	<script src="assets/js/d3/d3.min.js"></script>
+	<script src="assets/js/nvd3/nv.d3.min.js"></script>
+	<script src="assets/js/nvd3/tooltip.js"></script>
+	<script src="assets/js/nvd3/utils.js"></script>
+	<script src="assets/js/nvd3/interactiveLayer.js"></script>
+	<script src="assets/js/nvd3/models/legend.js"></script>
+	<script src="assets/js/nvd3/models/axis.js"></script>
+	<script src="assets/js/nvd3/models/scatter.js"></script>
+	<script src="assets/js/nvd3/models/line.js"></script>
+	<script src="assets/js/nvd3/models/multiBar.js"></script>
+	<script src="assets/js/nvd3/models/multiBarChart.js"></script>
+
+	<script>
+
+	function defaultChartConfig(containerId, data) {
+	  nv.addGraph(function() {
+
+	    var chart = nv.models.sparklinePlus()
+	                .color(['#ee7248'])
+
+	    chart
+	      .margin({left:70})
+	      .x(function(d,i) { return i })
+	      .xTickFormat(function(d) {
+	        return d3.time.format('%x')(new Date(data[d].x))
+	      })
+
+	    d3.select(containerId)
+	        .datum(data)
+	      .transition().duration(250)
+	        .call(chart);
+
+
+	    return chart;
+	  });
+	}
+
+	defaultChartConfig("#chart2", volatileChart(130.0, 0.02));
+
+
+	function sine() {
+	  var sin = [];
+	  var now =+new Date();
+
+	  for (var i = 0; i < 100; i++) {
+	    sin.push({x: now + i * 1000 * 60 * 60 * 24, y: Math.sin(i/10)});
+	  }
+
+	  return sin;
+	}
+
+	function volatileChart(startPrice, volatility, numPoints) {
+	     var rval =  [];
+	     var now =+new Date();
+	     numPoints = numPoints || 100;
+	     for(var i = 1; i < numPoints; i++) {
+
+	        rval.push({x: now + i * 1000 * 60 * 60 * 24, y: startPrice});
+	        var rnd = Math.random();
+	        var changePct = 2 * volatility * rnd;
+	        if ( changePct > volatility) {
+	           changePct -= (2*volatility);
+	        }
+	        startPrice = startPrice + startPrice * changePct;
+	     }
+	     return rval;
+	}
+
+	</script>
+
+	<script>
+	// Wrapping in nv.addGraph allows for '0 timeout render', stores rendered charts in nv.graphs, and may do more in the future... it's NOT required
+
+	var myColors = ["rgba(225, 158, 46, 0.85)", "rgba(225, 158, 46, 0.5)"];
+	d3.scale.myColors = function() {
+	    return d3.scale.ordinal().range(myColors);
+	};
+
+	nv.addGraph(function() {
+	   var chart = nv.models.cumulativeLineChart()
+	              .margin({left: 48, bottom: 20, right: 10, top: 10})
+	             .useInteractiveGuideline(true)
+	             .x(function(d) { return d[0] })
+	             .y(function(d) { return d[1]/100 })
+	             .color(d3.scale.myColors().range())
+	             .average(function(d) { return d.mean/100; })
+	             .transitionDuration(300)
+	             .clipVoronoi(false);
+
+	   chart.xAxis
+	      .tickFormat(function(d) {
+	          return d3.time.format('%m/%d/%y')(new Date(d))
+	        });
+
+	  chart.yAxis
+	      .tickFormat(d3.format(',.1%'));
+
+	  d3.select('#chart1 svg')
+	      .datum(cumulativeTestData())
+	      .call(chart);
+
+	  //TODO: Figure out a good way to do this automatically
+	  nv.utils.windowResize(chart.update);
+
+	  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+	  return chart;
+	});
+
+	d3.scale.myColors = function() {
+	    return d3.scale.ordinal().range(myColors);
+	};
+
+	nv.addGraph(function() {
+	   var chart = nv.models.cumulativeLineChart()
+	             .useInteractiveGuideline(false)
+	             .rightAlignYAxis(true)
+	             .margin({right:90})
+	             .x(function(d) { return d[0] })
+	             .y(function(d) { return d[1]/100 })
+	             .color(d3.scale.myColors().range())
+	             .average(function(d) { return d.mean/100; })
+	             .clipVoronoi(false);
+
+	   chart.xAxis
+	      .tickFormat(function(d) {
+	          return d3.time.format('%m/%d/%y')(new Date(d))
+	        });
+
+	  chart.yAxis
+	      .tickFormat(d3.format(',.1%'));
+
+	  d3.select('#chart2 svg')
+	      .datum(cumulativeTestData())
+	      .call(chart);
+
+	  //TODO: Figure out a good way to do this automatically
+	  nv.utils.windowResize(chart.update);
+
+	  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+	  return chart;
+	});
+
+
+	function flatTestData() {
+	  return [
+	    {
+	      key: "Snakes",
+	      values: [0,1,2,3,4,5,6,7,8,9].map(function(d) {
+	        var currentDate = new Date();
+	        currentDate.setDate(currentDate.getDate() + d);
+	        return [currentDate, 0]
+	      })
+	    }
+	  ];
+	}
+
+
+	function cumulativeTestData() {
+
+
+
+	  return [
+
+	                {
+	                    area: true,
+	                    key: "Current",
+	                    values: [ [ 1083297600000 , -2.974623048543] , [ 1085976000000 , -1.7740300785979] , [ 1088568000000 , 4.4681318138177] , [ 1091246400000 , 7.0242541001353] , [ 1093924800000 , 7.5709603667586] , [ 1096516800000 , 20.612245065736] , [ 1099195200000 , 21.698065237316] , [ 1101790800000 , 40.501189458018] , [ 1104469200000 , 50.464679413194] , [ 1107147600000 , 48.917421973355] , [ 1109566800000 , 63.750936549160] , [ 1112245200000 , 59.072499126460] , [ 1114833600000 , 43.373158880492] , [ 1117512000000 , 54.490918947556] , [ 1120104000000 , 56.661178852079] , [ 1122782400000 , 73.450103545496] , [ 1125460800000 , 71.714526354907] , [ 1128052800000 , 85.221664349607] , [ 1130734800000 , 77.769261392481] , [ 1133326800000 , 95.966528716500] , [ 1136005200000 , 107.59132116397] , [ 1138683600000 , 127.25740096723] , [ 1141102800000 , 122.13917498830] , [ 1143781200000 , 126.53657279774] , [ 1146369600000 , 132.39300992970] , [ 1149048000000 , 120.11238242904] , [ 1151640000000 , 118.41408917750] , [ 1154318400000 , 107.92918924621] , [ 1156996800000 , 110.28057249569] , [ 1159588800000 , 117.20485334692] , [ 1162270800000 , 141.33556756948] , [ 1164862800000 , 159.59452727893] , [ 1167541200000 , 167.09801853304] , [ 1170219600000 , 185.46849659215] , [ 1172638800000 , 184.82474099990] , [ 1175313600000 , 195.63155213887] , [ 1177905600000 , 207.40597044171] , [ 1180584000000 , 230.55966698196] , [ 1183176000000 , 239.55649035292] , [ 1185854400000 , 241.35915085208] , [ 1188532800000 , 239.89428956243] , [ 1191124800000 , 260.47781917715] , [ 1193803200000 , 276.39457482225] , [ 1196398800000 , 258.66530682672] , [ 1199077200000 , 250.98846121893] , [ 1201755600000 , 226.89902618127] , [ 1204261200000 , 227.29009273807] , [ 1206936000000 , 218.66476654350] , [ 1209528000000 , 232.46605902918] , [ 1212206400000 , 253.25667081117] , [ 1214798400000 , 235.82505363925] , [ 1217476800000 , 229.70112774254] , [ 1220155200000 , 225.18472705952] , [ 1222747200000 , 189.13661746552] , [ 1225425600000 , 149.46533007301] , [ 1228021200000 , 131.00340772114] , [ 1230699600000 , 135.18341728866] , [ 1233378000000 , 109.15296887173] , [ 1235797200000 , 84.614772549760] , [ 1238472000000 , 100.60810015326] , [ 1241064000000 , 141.50134895610] , [ 1243742400000 , 142.50405083675] , [ 1246334400000 , 139.81192372672] , [ 1249012800000 , 177.78205544583] , [ 1251691200000 , 194.73691933074] , [ 1254283200000 , 209.00838460225] , [ 1256961600000 , 198.19855877420] , [ 1259557200000 , 222.37102417812] , [ 1262235600000 , 234.24581081250] , [ 1264914000000 , 228.26087689346] , [ 1267333200000 , 248.81895126250] , [ 1270008000000 , 270.57301075186] , [ 1272600000000 , 292.64604322550] , [ 1275278400000 , 265.94088520518] , [ 1277870400000 , 237.82887467569] , [ 1280548800000 , 265.55973314204] , [ 1283227200000 , 248.30877330928] , [ 1285819200000 , 278.14870066912] , [ 1288497600000 , 292.69260960288] , [ 1291093200000 , 300.84263809599] , [ 1293771600000 , 326.17253914628] , [ 1296450000000 , 337.69335966505] , [ 1298869200000 , 339.73260965121] , [ 1301544000000 , 346.87865120765] , [ 1304136000000 , 347.92991526628] , [ 1306814400000 , 342.04627502669] , [ 1309406400000 , 333.45386231233] , [ 1312084800000 , 323.15034181243] , [ 1314763200000 , 295.66126882331] , [ 1317355200000 , 251.48014579253] , [ 1320033600000 , 295.15424257905] , [ 1322629200000 , 294.54766764397] , [ 1325307600000 , 295.72906119051] , [ 1327986000000 , 325.73351347613] , [ 1330491600000 , 340.16106061186] , [ 1333166400000 , 345.15514071490] , [ 1335758400000 , 337.10259395679] , [ 1338436800000 , 318.68216333837] , [ 1341028800000 , 317.03683945246] , [ 1343707200000 , 318.53549659997] , [ 1346385600000 , 332.85381464104] , [ 1348977600000 , 337.36534373477] , [ 1351656000000 , 350.27872156161] , [ 1354251600000 , 349.45128876100]]
+	                    ,
+	                    mean: 250
+	                },
+	                {
+	                    key: "Previous",
+	                    mean: 125,
+	                    values: [ [ 1083297600000 , -3.7454058855943] , [ 1085976000000 , -3.6096667436314] , [ 1088568000000 , -0.8440003934950] , [ 1091246400000 , 2.0921565171691] , [ 1093924800000 , 3.5874194844361] , [ 1096516800000 , 13.742776534056] , [ 1099195200000 , 13.212577494462] , [ 1101790800000 , 24.567562260634] , [ 1104469200000 , 34.543699343650] , [ 1107147600000 , 36.438736927704] , [ 1109566800000 , 46.453174659855] , [ 1112245200000 , 43.825369235440] , [ 1114833600000 , 32.036699833653] , [ 1117512000000 , 41.191928040141] , [ 1120104000000 , 40.301151852023] , [ 1122782400000 , 54.922174023466] , [ 1125460800000 , 49.538009616222] , [ 1128052800000 , 61.911998981277] , [ 1130734800000 , 56.139287982733] , [ 1133326800000 , 71.780099623014] , [ 1136005200000 , 78.474613851439] , [ 1138683600000 , 90.069363092366] , [ 1141102800000 , 87.449910167102] , [ 1143781200000 , 87.030640692381] , [ 1146369600000 , 87.053437436941] , [ 1149048000000 , 76.263029236276] , [ 1151640000000 , 72.995735254929] , [ 1154318400000 , 63.349908186291] , [ 1156996800000 , 66.253474132320] , [ 1159588800000 , 75.943546587481] , [ 1162270800000 , 93.889549035453] , [ 1164862800000 , 106.18074433002] , [ 1167541200000 , 116.39729488562] , [ 1170219600000 , 129.09440567885] , [ 1172638800000 , 123.07049577958] , [ 1175313600000 , 129.38531055124] , [ 1177905600000 , 132.05431954171] , [ 1180584000000 , 148.86060871993] , [ 1183176000000 , 157.06946698484] , [ 1185854400000 , 155.12909573880] , [ 1188532800000 , 155.14737474392] , [ 1191124800000 , 159.70646945738] , [ 1193803200000 , 166.44021916278] , [ 1196398800000 , 159.05963386166] , [ 1199077200000 , 151.38121182455] , [ 1201755600000 , 132.02441123108] , [ 1204261200000 , 121.93110210702] , [ 1206936000000 , 112.64545460548] , [ 1209528000000 , 122.17722331147] , [ 1212206400000 , 133.65410878087] , [ 1214798400000 , 120.20304048123] , [ 1217476800000 , 123.06288589052] , [ 1220155200000 , 125.33598074057] , [ 1222747200000 , 103.50539786253] , [ 1225425600000 , 85.917420810943] , [ 1228021200000 , 71.250132356683] , [ 1230699600000 , 71.308439405118] , [ 1233378000000 , 52.287271484242] , [ 1235797200000 , 30.329193047772] , [ 1238472000000 , 44.133440571375] , [ 1241064000000 , 77.654211210456] , [ 1243742400000 , 73.749802969425] , [ 1246334400000 , 70.337666717565] , [ 1249012800000 , 102.69722724876] , [ 1251691200000 , 117.63589109350] , [ 1254283200000 , 128.55351774786] , [ 1256961600000 , 119.21420882198] , [ 1259557200000 , 139.32979337027] , [ 1262235600000 , 149.71606246357] , [ 1264914000000 , 144.42340669795] , [ 1267333200000 , 161.64446359053] , [ 1270008000000 , 180.23071774437] , [ 1272600000000 , 199.09511476051] , [ 1275278400000 , 180.10778306442] , [ 1277870400000 , 158.50237284410] , [ 1280548800000 , 177.57353623850] , [ 1283227200000 , 162.91091118751] , [ 1285819200000 , 183.41053361910] , [ 1288497600000 , 194.03065670573] , [ 1291093200000 , 201.23297214328] , [ 1293771600000 , 222.60154078445] , [ 1296450000000 , 233.35556801977] , [ 1298869200000 , 231.22452435045] , [ 1301544000000 , 237.84432503045] , [ 1304136000000 , 235.55799131184] , [ 1306814400000 , 232.11873570751] , [ 1309406400000 , 226.62381538123] , [ 1312084800000 , 219.34811113539] , [ 1314763200000 , 198.69242285581] , [ 1317355200000 , 168.90235629066] , [ 1320033600000 , 202.64725756733] , [ 1322629200000 , 203.05389378105] , [ 1325307600000 , 204.85986680865] , [ 1327986000000 , 229.77085616585] , [ 1330491600000 , 239.65202435959] , [ 1333166400000 , 242.33012622734] , [ 1335758400000 , 234.11773262149] , [ 1338436800000 , 221.47846307887] , [ 1341028800000 , 216.98308827912] , [ 1343707200000 , 218.37781386755] , [ 1346385600000 , 229.39368622736] , [ 1348977600000 , 230.54656412916] , [ 1351656000000 , 243.06087025523] , [ 1354251600000 , 244.24733578385]]
+	                }
+	            ];
+
+
+
+
+
+	  return [
+
+	  ]
+
+	  /*
+	  .map(function(line) {
+	    line.values = line.values.map(function(d) { return {x: d[0], y: d[1]/100  }});
+	    return line;
+	  });
+	  */
+
+
+	}
+
+
+	</script>
+
+
+
+	<script>
+	// Wrapping in nv.addGraph allows for '0 timeout render', stores rendered charts in nv.graphs, and may do more in the future... it's NOT required
+	var chart;
+
+	nv.addGraph(function() {
+	  chart = nv.models.lineChart()
+
+	  .options({
+	    margin: {left: 10, bottom: 20, right: 2, top: 10},
+	    x: function(d,i) { return i},
+	    showXAxis: true,
+	    showYAxis: true,
+	    transitionDuration: 250,
+	    showLegend: false
+	  })
+	  ;
+
+
+	  // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
+	  chart.xAxis
+	    .axisLabel("Time (s)")
+	    .tickFormat(d3.format(',.1f'));
+
+	  chart.yAxis
+	    .axisLabel('Voltage (v)')
+	    .tickFormat(d3.format(',.2f'));
+
+	  d3.select('#chart4 svg')
+	    .datum(sinAndCos())
+	    .call(chart);
+
+	  //TODO: Figure out a good way to do this automatically
+	  nv.utils.windowResize(chart.update);
+	  //nv.utils.windowResize(function() { d3.select('#chart1 svg').call(chart) });
+
+	  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+	  return chart;
+	});
+
+	function sinAndCos() {
+	  var sin = [],
+	    cos = [],
+	    rand = [],
+	    rand2 = []
+	    ;
+
+	  for (var i = 0; i < 100; i++) {
+	    sin.push({x: i, y: i % 10 == 5 ? null : Math.sin(i/10) }); //the nulls are to show how defined works
+	    cos.push({x: i, y: .5 * Math.cos(i/10)});
+	    rand.push({x:i, y: Math.random() / 10});
+	    rand2.push({x: i, y: Math.cos(i/10) + Math.random() / 10 })
+	  }
+
+	  return [
+	    {
+	      values: rand,
+	      key: "Metric Name",
+	      color: "rgb(211, 84, 0)"
+	    }
+	  ];
+	}
+
+	</script>
+
+	<script>
+	// Wrapping in nv.addGraph allows for '0 timeout render', stores rendered charts in nv.graphs, and may do more in the future... it's NOT required
+	var chart;
+
+	nv.addGraph(function() {
+	  chart = nv.models.multiBarChart()
+
+	  .options({
+	    margin: {left: 10, bottom: 20, right: 2, top: 10},
+	    x: function(d,i) { return i},
+	    showXAxis: true,
+	    showYAxis: true,
+	    showControls: false,
+	    transitionDuration: 250,
+	    showLegend: false
+	  })
+	  ;
+
+
+	  // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
+	  chart.xAxis
+	    .axisLabel("Time (s)")
+	    .tickFormat(d3.format(',.1f'));
+
+	  chart.yAxis
+	    .axisLabel('Voltage (v)')
+	    .tickFormat(d3.format(',.2f'));
+
+	  d3.select('.chart-metrics svg')
+	    .datum(sinAndCos())
+	    .call(chart);
+
+	  d3.select('.chart-metric-2 svg')
+	    .datum(sinAndCos())
+	    .call(chart);
+
+	   d3.select('.chart-metric-3 svg')
+	     .datum(sinAndCos())
+	     .call(chart);
+
+	  //TODO: Figure out a good way to do this automatically
+	  nv.utils.windowResize(chart.update);
+	  //nv.utils.windowResize(function() { d3.select('#chart1 svg').call(chart) });
+
+	  chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+	  function sinAndCos() {
+	    var sin = [],
+	      cos = [],
+	      rand = [],
+	      rand2 = []
+	      ;
+
+	    for (var i = 0; i < 100; i++) {
+	      sin.push({x: i, y: i % 10 == 5 ? null : Math.sin(i/10) }); //the nulls are to show how defined works
+	      cos.push({x: i, y: .5 * Math.cos(i/10)});
+	      rand.push({x:i, y: Math.random() / 10});
+	      rand2.push({x: i, y: Math.cos(i/10) + Math.random() / 10 })
+	    }
+
+	    return [
+	      {
+	        values: rand,
+	        key: "Metric Name",
+	        color: "#e19e2e"
+	      }
+	    ];
+	  }
+
+	  return chart;
+	});
+
+
+
+	</script>
+
+	<script src="assets/js/odometer/odometer.min.js"></script>
+	<link href="assets/js/odometer/odometer-theme-default.css" rel="stylesheet">
+	<script>
+	$(function(){
+
+    var exampleOdometerValue = 492.12;
+    var exampleOdometer = new Odometer({ el: $('.odometer')[0], theme: 'default', value: exampleOdometerValue });
+    exampleOdometer.render()
+
+    setInterval(function(){
+      exampleOdometer.update(exampleOdometerValue++);
+    }, 3000);
+
+
+
+    setInterval(function(){
+      // Github's limits reset every hour
+      i = 0;
+    }, 3600*1000);
+
+  });
+	</script>
+</body>
+</html>

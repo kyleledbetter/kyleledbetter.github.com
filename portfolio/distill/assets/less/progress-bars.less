@@ -1,0 +1,170 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+
+// Bar animations
+// -------------------------
+
+// Webkit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Opera
+@-o-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.progress {
+  overflow: hidden;
+  height: @line-height-computed;
+  margin-bottom: @line-height-computed;
+  background-color: @progress-bg;
+  border-radius: 10px;
+}
+
+// Bar of progress
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: @font-size-small;
+  line-height: @line-height-computed;
+  color: @progress-bar-color;
+  text-align: center;
+  background-color: @progress-bar-bg;
+  .transition(width .6s ease);
+
+}
+
+// Striped bars
+.progress-striped .progress-bar {
+  #gradient > .striped();
+  background-size: 40px 40px;
+}
+
+// Call animation for the active one
+.progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+     -moz-animation: progress-bar-stripes 2s linear infinite;
+      -ms-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+
+
+
+// Variations
+// -------------------------
+
+.progress-bar-success {
+  .progress-bar-variant(@progress-bar-success-bg);
+}
+
+.progress-bar-info {
+  .progress-bar-variant(@progress-bar-info-bg);
+}
+
+.progress-bar-warning {
+  .progress-bar-variant(@progress-bar-warning-bg);
+}
+
+.progress-bar-danger {
+  .progress-bar-variant(@progress-bar-danger-bg);
+}
+
+.progress-bar-inverse {
+  .progress-bar-variant(@brand-inverse);
+}
+
+.progress-bar-success-light {
+  .progress-bar-variant(@brand-success-light);
+}
+
+.progress-bar-info-light {
+  .progress-bar-variant(@brand-info-light);
+}
+
+.progress-bar-warning-light {
+  .progress-bar-variant(@brand-warning-light);
+}
+
+.progress-bar-danger-light {
+  .progress-bar-variant(@brand-danger-light);
+}
+
+.progress-bar-inverse-light {
+  .progress-bar-variant(@brand-inverse-light);
+}
+
+// Progress Bar Colors 
+.progress-success {
+  background-color: lighten(@brand-info, 20%);
+  border: 1px solid @brand-success;
+}
+
+.progress-info {
+  background-color: lighten(@brand-info, 25%);
+  border: 1px solid @brand-info;
+}
+
+.progress-warning {
+  background-color: lighten(@brand-warning, 35%);
+  border: 1px solid @brand-warning;
+}
+
+.progress-danger {
+  background-color: lighten(@brand-danger, 40%);
+  border: 1px solid @brand-danger;
+}
+
+.progress-inverse {
+  background-color: lighten(@brand-inverse, 30%);
+  border: 1px solid @brand-inverse;
+}
+
+.progress-success-light {
+  background-color: lighten(@brand-info-light, 20%);
+  border: 1px solid @brand-success-light;
+}
+
+.progress-info-light {
+  background-color: lighten(@brand-info-light, 20%);
+  border: 1px solid @brand-info-light;
+}
+
+.progress-warning-light {
+  background-color: lighten(@brand-warning-light, 20%);
+  border: 1px solid @brand-warning-light;
+}
+
+.progress-danger-light {
+  background-color: lighten(@brand-danger-light, 20%);
+  border: 1px solid @brand-danger-light;
+}
+
+.progress-inverse-light {
+  background-color: lighten(@brand-inverse-light, 20%);
+  border: 1px solid @brand-inverse-light;
+}

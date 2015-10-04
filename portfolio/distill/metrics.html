@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Distiller.ee</title>
+	<link href="assets/css/application.css" rel="stylesheet">
+	<!-- nvd3 -->
+	<style>
+		.chart svg {
+		min-width: 100px;
+		min-height: 100px;
+		}
+		svg.sparkline {
+		width: 300px;
+		height: 70px;
+		font-size: 12px;
+		margin-top: -6px;
+		margin-left: -60px;
+		}
+		.nv-series-1 {
+		stroke-dasharray: 3, 3;
+		}
+		.nvd3 .nv-axis path {
+		stroke: #ddd !important;
+		}
+		.nvd3 .nv-axis .nv-axisMaxMin text {
+		fill: #888 !important;
+		}
+		svg text {
+		fill: #918f88 !important;
+		}
+		.panel-heading .select2-container {
+		margin-right: -8px;
+		margin-top: -5px;
+		}
+		.nv-legendWrap,
+		.nv-controlsWrap {
+			display: block;
+			margin-bottom: 20px;
+		}
+	</style>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond/respond.min.js"></script>
+	<![endif]-->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+	<link href="assets/ico/favicon.png" rel="shortcut icon" type="image/x-icon" />
+	<script src="assets/js/modernizr.custom.js"></script>
+</head>
+<body class="no-touch">
+	<header class="header header-warning">
+		<a href="users.html" class="h4"><span aria-hidden="true" class="icon-users"></span> <span class="user-name">Users</span></a>
+	</header>
+	<header class="header header-danger">
+		<a href="sources.html" class="h4"><span aria-hidden="true" class="icon-cube4"></span> <span class="user-name">Data Sources</span></a>
+	</header>
+	<header class="header header-primary">
+		<a href="index.html" class="h4"><span aria-hidden="true" class="icon-dashboard"></span> <span class="user-name">Dashboard</span></a>
+	</header>
+	<header class="header header-info">
+		<a class="sidebar-toggle pull-left btn btn-sm btn-trans"><span aria-hidden="true" class="icon-menu-3"></span></a>
+		<a class="aside-toggle pull-right btn btn-trans btn-sm"><span aria-hidden="true" class="icon-search"></span></a>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" class="btn btn-sm btn-danger btn-round" href="#"><span class="text-md">12</span></a>
+			<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">Tobias Funke added you to a chat: Get My Rocks Off<div class="text-muted">3 hours ago</div></a></li>
+				<li><a href="#">Gob kicked you from a chat: Franklin's Friends<div class="text-muted">7 hours ago</div></a></li>
+				<li><a href="#">Lucille Bluth added you to a chat: Lucille 2<div class="text-muted">2 days ago</div></a></li>
+				<li><a href="#">George Michael kicked you from a chat: Dorm<div class="text-muted">3 days ago</div></a></li>
+				<li><a href="#">Barry Zuckerhorn added you to a chat: Don't Tell Michael<div class="text-muted">4 days ago</div></a></li>
+				<li class="divider"></li>
+				<li><a href="#" class="text-center"><span aria-hidden="true" class="icon-ok"></span> Mark all as read</a></li>
+			</ul>
+		</div>
+		<div class="dropdown pull-right">
+			<a data-toggle="dropdown" href="#" class="h3"><img class="img-circle" src="assets/images/avatars/michael_128.jpg" width="20" alt="..."> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#">View Profile</a></li>
+				<li><a href="#">Edit Account</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Sign Out</a></li>
+			</ul>
+		</div>
+		<div class="dropdown dropdown-title">
+			<a href="#" class="h4 header-toggle"><span aria-hidden="true" class="icon-chart"></span> <span class="user-name">Metrics</span> <span aria-hidden="true" class="icon-arrow-down-2 text-sm"></span></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="index.html"><span aria-hidden="true" class="icon-dashboard"></span> Dashboard</a></li>
+				<li><a href="sources.html"><span aria-hidden="true" class="icon-cube4"></span> Data Sources</a></li>
+				<li><a href="metrics.html"><span aria-hidden="true" class="icon-chart"></span> Metrics</a></li>
+				<li><a href="users.html"><span aria-hidden="true" class="icon-users"></span> Users</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- begin content -->
+	<div class="content">
+		<div class="row">
+			<!-- begin column -->
+			<div class="col-sm-12">
+				<div class="clearfix">
+					<div class="btn-toolbar pull-right">
+						<div class="btn-group">
+							<a href="new-metric.html" class="btn btn-success btn-sm">
+							New Metric <span aria-hidden="true" class="icon-plus text-sm"></span>
+							</a>
+						</div>
+					</div>
+					<div class="btn-toolbar pull-left">
+						<div class="btn-group">
+							<input type="search" class="form-control input-sm" placeholder="filter search" />
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								Sort <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Name</a></li>
+								<li><a href="#">Date Added</a></li>
+								<li><a href="#">Date Modified</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Asc</a></li>
+								<li><a href="#">Desc</a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								Tags <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">tag name</a></li>
+								<li><a href="#">tag name</a></li>
+								<li><a href="#">tag name</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Clear Tags</a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+								Filter by Source <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Source Name</a></li>
+								<li><a href="#">Source Name</a></li>
+								<li><a href="#">Source Name</a></li>
+								<li class="divider"></li>
+								<li><a href="#">All Sources</a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<a href="#" class="btn btn-none"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div id="chart1" style="height: 250px; min-height: 150px;">
+							<svg></svg>
+						</div>
+					</div>
+					<div class="list-group list-group-striped">
+						<div class="list-group-item">
+							<div class="row">
+								<div class="col-xs-6">
+									Name
+								</div>
+								<div class="col-xs-2 text-center">
+									Last 24 hrs
+								</div>
+								<div class="col-xs-2 text-center">
+									Last 7 days
+								</div>
+								<div class="col-xs-2 text-center">
+									Last 30 days
+								</div>
+							</div>
+						</div>
+						<a href="metric.html" class="list-group-item list-group-item-tall">
+							<div class="row h4">
+								<div class="col-xs-6">
+									Website Visits <small class="text-sm text-truncate">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</small>
+								</div>
+								<div class="col-xs-2 text-center">
+									242
+									<span class="text-primary text-sm">
+										+3.2% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">24 hour change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									1694 <span class="text-primary text-sm">
+										+3.7% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">7 day change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									7260 <span class="text-primary text-sm">
+										+3.1% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">30 day change</div>
+								</div>
+							</div>
+						</a>
+						<a href="metric.html" class="list-group-item list-group-item-tall">
+							<div class="row h4">
+								<div class="col-xs-6">
+									PoS Sales  <small class="text-sm text-truncate">Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor.</small>
+								</div>
+								<div class="col-xs-2 text-center">
+									201 <span class="text-warning text-sm">
+										-3.1% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">24 hour change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									1293 <span class="text-warning text-sm">
+										-3.7% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">7 day change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									6938 <span class="text-warning text-sm">
+										-4.6% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">30 day change</div>
+								</div>
+							</div>
+						</a>
+						<a href="metric.html" class="list-group-item list-group-item-tall">
+							<div class="row h4">
+								<div class="col-xs-6">
+									App Installs  <small class="text-sm text-truncate">Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</small>
+								</div>
+								<div class="col-xs-2 text-center">
+									192 <span class="text-inverse text-sm">
+										-2.8% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">24 hour change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									1183 <span class="text-inverse text-sm">
+										-0.8% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">7 day change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									5938 <span class="text-inverse text-sm">
+										-0.2% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">30 day change</div>
+								</div>
+							</div>
+						</a>
+						<a href="metric.html" class="list-group-item list-group-item-tall">
+							<div class="row h4">
+								<div class="col-xs-6">
+									Passenger Scans  <small class="text-sm text-truncate">Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</small>
+								</div>
+								<div class="col-xs-2 text-center">
+									182 <span class="text-danger text-sm">
+										+2.6% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">24 hour change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									1482 <span class="text-danger text-sm">
+										+3.2% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">7 day change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									5223 <span class="text-danger text-sm">
+										+2.8% <span aria-hidden="true" class="icon-arrow-up-5"></span>
+									</span>
+									<div class="text-micro text-muted">30 day change</div>
+								</div>
+							</div>
+						</a>
+						<a href="metric.html" class="list-group-item list-group-item-tall">
+							<div class="row h4">
+								<div class="col-xs-6">
+									Oil Well Alerts  <small class="text-sm text-truncate">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.</small>
+								</div>
+								<div class="col-xs-2 text-center">
+									172 <span class="text-primary text-sm">
+										-2.5% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">24 hour change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									1323 <span class="text-primary text-sm">
+										-1.2% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">7 day change</div>
+								</div>
+								<div class="col-xs-2 text-center">
+									4782 <span class="text-primary text-sm">
+										-0.2% <span aria-hidden="true" class="icon-arrow-bottom"></span>
+									</span>
+									<div class="text-micro text-muted">30 day change</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="btn-group btn-group-justified">
+						<a href="#" class="btn btn-primary" disabled="disabled">Prev</a>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+					
+				</div>
+			</div>
+			<!-- end column -->
+		</div>
+		<hr />
+		<footer class="text-center text-sm text-muted">
+			<p>&copy; 2014 Distilleree, Inc.</p>
+		</footer>
+	</div>
+	<!-- end content -->
+
+	<!-- begin sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-heading">
+			<a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<a class="sidebar-brand" href="#"><span aria-hidden="true" class="icon-health icon-distilleree"></span> DISTILLER.ee</a>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class=""><a href="index.html"><span aria-hidden="true" class="icon-dashboard text-primary"></span> Dashboard</a></li>
+			<li class=""><a href="sources.html"><span aria-hidden="true" class="icon-cube4 text-danger"></span> Data Sources</a></li>
+			<li class="active"><a href="metrics.html"><span aria-hidden="true" class="icon-chart text-info"></span> Metrics</a></li>
+			<li class=""><a href="users.html"><span aria-hidden="true" class="icon-users text-warning"></span> Users</a></li>
+		</ul>
+		<hr />
+	</div>
+	<!-- end sidebar -->
+
+	<!-- begin aside -->
+	<div class="aside">
+		<div class="aside-heading">
+			<a class="aside-toggle pull-left btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<form class="aside-form" role="search">
+				<input type="text" class="form-control input-small" placeholder="Search">
+			</form>
+		</div>
+		<ul class="nav nav-stacked">
+			<li class="nav-heading">Tags</li>
+		</ul>
+		<ul class="tags">
+			<li><a href="#" class="tag">task</a></li>
+			<li><a href="#" class="tag">file</a></li>
+			<li><a href="#" class="tag">event</a></li>
+			<li><a href="#" class="tag">reminder</a></li>
+			<li><a href="#" class="tag">html</a></li>
+			<li><a href="#" class="tag">css</a></li>
+			<li><a href="#" class="tag">javascript</a></li>
+			<li><a href="#" class="tag">angular</a></li>
+			<li><a href="#" class="tag">jade</a></li>
+			<li><a href="#" class="tag">node</a></li>
+			<li><a href="#" class="tag">express</a></li>
+			<li><a href="#" class="tag">ruby</a></li>
+			<li><a href="#" class="tag">rails</a></li>
+			<li><a href="#" class="tag">product</a></li>
+			<li><a href="#" class="tag">ux</a></li>
+		</ul>
+	</div>
+	<!-- end aside -->
+	<!-- begin modal -->
+	<div class="modal fade modal-chat-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="media">
+						<a class="pull-left" href="#">
+							<img class="media-object img-circle" src="assets/images/avatars/tobias_128.jpg" alt="..." width="28">
+						</a>
+						<div class="media-body">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4>Tobias Funke</h4>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<h5 class="text-large">Well, Michael, you really are quite the Cupid, aren’t you? I tell you, you can sink your arrow into my buttocks any time.</h5>
+					<div class="text-muted">12:48 PM - 9/09/2013</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end modal -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/application.js"></script>
+
+	<script src="assets/js/d3/d3.min.js"></script>
+	<script src="assets/js/nvd3/nv.d3.min.js"></script>
+	<script src="assets/js/nvd3/tooltip.js"></script>
+	<script src="assets/js/nvd3/utils.js"></script>
+	<script src="assets/js/nvd3/interactiveLayer.js"></script>
+	<script src="assets/js/nvd3/models/legend.js"></script>
+	<script src="assets/js/nvd3/models/axis.js"></script>
+	<script src="assets/js/nvd3/models/scatter.js"></script>
+	<script src="assets/js/nvd3/models/line.js"></script>
+	<script src="assets/js/nvd3/models/multiBar.js"></script>
+	<script src="assets/js/nvd3/models/multiBarChart.js"></script>
+
+	<script>
+
+
+	var negative_test_data = new d3.range(0,5).map(function(d,i) { return {
+	  key: 'Metric ' + i,
+	  values: new d3.range(0,11).map( function(f,j) {
+	    return {
+	             y: 10 + Math.random()*100 * (Math.floor(Math.random()*100)%2 ? 1 : -1),
+	             x: j
+	           }
+	  })
+	  };
+	});
+
+	function dataFactory(seriesNum, perSeries) {
+	   return new d3.range(0,seriesNum).map(function(d,i) { return {
+	    key: 'Metric ' + i,
+	    values: new d3.range(0,perSeries).map( function(f,j) {
+	      return {
+	               y: 10 + Math.random()*100,
+	               x: j
+	             }
+	    })
+	    };
+	  });
+
+	}
+
+	var myColors = ["#81B0A6", "#D1492C", "#764B24", "#E19B35", "#6FC6A3", "#D24A27", "#E29D2B", "#494844", "#9FC4BC", "#DA6346", "#825931"];
+	d3.scale.myColors = function() {
+	    return d3.scale.ordinal().range(myColors);
+	};
+
+	defaultChartConfig("chart1", negative_test_data, {
+	  barColor: d3.scale.myColors().range(),
+	  delay: 1200,
+	  groupSpacing: 0.1,
+	  reduceXTicks: false,
+	  staggerLabels: true
+	});
+
+	defaultChartConfig("chart2", dataFactory(3,11), {
+	  delay: 0,
+	  transitionDuration:0,
+	  groupSpacing: 0.2
+	});
+
+	defaultChartConfig("chart3",dataFactory(1,15),{
+	  groupSpacing: 0,
+	  delay:0
+	});
+
+	defaultChartConfig("chart4",dataFactory(18,7),{
+	  barColor: (["#81B0A6", "#D1492C", "#764B24", "#E19B35", "#6FC6A3", "#D24A27", "#E29D2B", "#494844", "#9FC4BC", "#DA6346", "#825931"]),
+	  delay:800
+	});
+
+	defaultChartConfig("chart5",dataFactory(1,1),{
+	  delay:0
+	});
+
+	defaultChartConfig("chart6",dataFactory(1,2),{
+	  delay:0
+	});
+
+	defaultChartConfig("chart7",dataFactory(0,0),{
+	  delay:0
+	});
+
+	function defaultChartConfig(containerId, data, chartOptions) {
+	  nv.addGraph(function() {
+	      var chart;
+	      chart = nv.models.multiBarChart()
+	        .margin({left: 45, bottom: 24, right: 10, top: 10})
+	        .transitionDuration(300)
+	        ;
+
+	      chart.options(chartOptions);
+	      chart.multibar
+	        .hideable(true);
+
+	      chart.xAxis
+	          .axisLabel("Current Index")
+	          .showMaxMin(true)
+	          .tickFormat(d3.format(',0f'));
+
+	      chart.yAxis
+	          .tickFormat(d3.format(',.1f'));
+
+	      d3.select('#' + containerId + ' svg')
+	          .datum(data)
+	         .call(chart);
+
+
+
+	      nv.utils.windowResize(chart.update);
+
+	      chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+
+	      return chart;
+	  });
+	}
+
+
+
+
+	</script>
+
+
+
+
+	<script>
+		/* D3 realtime sparklines */
+		function displayGraphExample(id, width, height, interpolation, animate, updateDelay, transitionDelay) {
+			// create an SVG element inside the #graph div that fills 100% of the div
+			var graph = d3.select(id).append("svg:svg").attr("width", "100%").attr("height", "100%");
+
+			// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
+			var data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 9];
+
+			// X scale will fit values from 0-10 within pixels 0-100
+			var x = d3.scale.linear().domain([0, 48]).range([-5, width]); // starting point is -5 so the first value doesn't show and slides off the edge as part of the transition
+			// Y scale will fit values from 0-10 within pixels 0-100
+			var y = d3.scale.linear().domain([0, 10]).range([0, height]);
+
+			// create a line object that represents the SVN line we're creating
+			var line = d3.svg.line()
+				// assign the X function to plot our line as we wish
+				.x(function(d,i) {
+					// verbose logging to show what's actually being done
+					//console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+					// return the X coordinate where we want to plot this datapoint
+					return x(i);
+				})
+				.y(function(d) {
+					// verbose logging to show what's actually being done
+					//console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
+					// return the Y coordinate where we want to plot this datapoint
+					return y(d);
+				})
+				.interpolate(interpolation)
+
+				// display the line by appending an svg:path element with the data line we created above
+				graph.append("svg:path").attr("d", line(data));
+				// or it can be done like this
+				//graph.selectAll("path").data([data]).enter().append("svg:path").attr("d", line);
+
+
+				function redrawWithAnimation() {
+					// update with animation
+					graph.selectAll("path")
+						.data([data]) // set the new data
+						.attr("transform", "translate(" + x(1) + ")") // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value
+						.attr("d", line) // apply the new data values ... but the new value is hidden at this point off the right of the canvas
+						.transition() // start a transition to bring the new value into view
+						.ease("linear")
+						.duration(transitionDelay) // for this demo we want a continual slide so set this to the same as the setInterval amount below
+						.attr("transform", "translate(" + x(0) + ")"); // animate a slide to the left back to x(0) pixels to reveal the new value
+
+						/* thanks to 'barrym' for examples of transform: https://gist.github.com/1137131 */
+				}
+
+				function redrawWithoutAnimation() {
+					// static update without animation
+					graph.selectAll("path")
+						.data([data]) // set the new data
+						.attr("d", line); // apply the new data values
+				}
+
+				setInterval(function() {
+				   var v = data.shift(); // remove the first element of the array
+				   data.push(v); // add a new element to the array (we're just taking the number we just shifted off the front and appending to the end)
+				   if(animate) {
+					   redrawWithAnimation();
+				   } else {
+				   	   redrawWithoutAnimation();
+				   }
+				}, updateDelay);
+			}
+
+			displayGraphExample("#graph1", 350, 20, "linear", true, 1000, 1000);
+			displayGraphExample("#graph2", 350, 20, "linear", true, 1000, 1000);
+			displayGraphExample("#graph3", 350, 20, "linear", true, 1000, 1000);
+			displayGraphExample("#graph4", 350, 20, "linear", true, 1000, 1000);
+			displayGraphExample("#graph5", 350, 20, "linear", true, 1500, 750);
+			displayGraphExample("#graph6", 350, 20, "linear", true, 1500, 750);
+		</script>
+</body>
+</html>

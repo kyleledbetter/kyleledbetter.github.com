@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="admin">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Joomla 3.0</title>
+<link href="../../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap.extended.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+
+	<!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/ico/apple-touch-icon-114x114.png">
+    
+</head>
+<body>
+<!-- Top Navigation -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="../../index.html">Joomla 3.0</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="../../index.html">Dashboard</a></li>
+					<li><a href="../../examples/pages">Pages</a></li>
+					<li><a href="../../examples/content">Content</a></li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Extensions <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/blog">Blog</a></li>
+							<li class=""><a href="../../examples/community">Community</a></li>
+							<li class=""><a href="../../examples/gallery">Gallery</a></li>
+							<li class=""><a href="../../examples/shop">Shop</a></li>
+							<li class=""><a href="../../examples/events">Events</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/forms">Forms</a></li>
+							<li class=""><a href="../../examples/rss">RSS Feeds</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/extensions">Manage Extensions</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/users">Users</a></li>
+							<li class=""><a href="../../examples/permissions">Permissions</a></li>
+							<li class="divider"></li>
+							<li class="active"><a href="../../examples/documents">Documents</a></li>
+							<li class=""><a href="../../examples/cache">Cache</a></li>
+							<li class=""><a href="../../examples/versions">Versions</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/settings">Global Settings</a></li>
+							<li class=""><a href="../../examples/settings/core.html">Core Components</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/settings/extensions.html">Extensions</a></li>
+							<li class=""><a href="../../examples/settings/templates.html">Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Design <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/templates/">Site Templates</a></li>
+							<li class=""><a href="../../examples/templates/admin.html">Admin Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">firstname.lastname <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/account">Account</a></li>
+							<li class=""><a href="../../examples/account/edit.html">Edit Account</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/login">Sign Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Header -->
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<a class="logo" href="../../index.html">Joomla 3.0 Admin</a>
+			</div>
+			<div class="span10">
+				<form class="navbar-search">
+	      			<input type="text" class="search-query" placeholder="Search" style="margin: 0 auto;" data-provide="typeahead" data-items="10" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+	      		</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Subheader -->
+<div class="subhead">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<h1>Documents</h1>
+			</div>
+			<div class="span10">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						  Actions 
+						  <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						</ul>
+					</div>
+			        <div class="btn-group">
+			          <a class="btn" href="#"><i class="icon-file"></i> Copy</a>
+			          <a class="btn" href="#"><i class="icon-share-alt"></i> Move</a>
+			          <a class="btn" href="#"><i class="icon-remove"></i> Delete</a>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-tag"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Tag Name</a></li>
+			        	  <li><a href="#">Tag Name</a></li>
+			        	  <li><a href="#">Tag Name</a></li>
+			        	  <li><a href="#">Tag Name</a></li>
+			        	  <li><a href="#">Tag Name</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-inbox"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Archive</a></li>
+			        	  <li><a href="#">Unarchive</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-cog"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Config One</a></li>
+			        	  <li><a href="#">Config Two</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-th-list"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Sort by Title</a></li>
+			        	  <li><a href="#">Sort by Created date</a></li>
+			        	  <li><a href="#">Sort by Modified date</a></li>
+			        	  <li><a href="#">Sort by File Size</a></li>
+			        	</ul>
+			        </div>
+			     </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="span2">
+		<!-- Begin Placeholder -->
+			<div class="btn-group">
+			    <a class="btn btn-primary btn-large btn-wide dropdown-toggle" data-toggle="dropdown" href="#">
+			    Create  <span class="caret"></span>
+			    </a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Upload File</a></li>
+					<li><a href="#">Create Directory</a></li>
+				</ul>
+			</div>
+			<hr />
+			<div class="sidebar-nav">
+				<ul class="nav nav-list">
+	              <li class="nav-header">Submenu</li>
+	              <li class="active"><a href="#">Documents</a></li>
+	              <li class="nav-header">Directories</li>
+	              <li><a href="#"><i class="icon-folder-open"></i> Directory One</a></li>
+	              <li class="active offset"><a href="#"><i class="icon-folder-close"></i> Subdirectory One</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> Subdirectory Two</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> Subdirectory Three</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Directory Two</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Directory Three</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Directory Found</a></li>
+	            </ul>
+            </div>
+        <!-- End Placeholder -->
+		</div>
+		<div class="span10">
+			<!-- Begin Placeholder -->
+			<ul class="breadcrumb">
+			  <li>
+			    <a href="#">Root</a> <span class="divider">/</span>
+			  </li>
+			  <li>
+			    <a href="#">Directory</a> <span class="divider">/</span>
+			  </li>
+			  <li class="active">
+			    <a href="#">Subdirectory One</a>
+			  </li>
+			</ul>
+			<div class="btn-toolbar">
+				<div class="btn-group pull-left">
+					<a href="../../examples/documents" class="btn active"><i class="icon-list"></i></a>
+					<a href="../../examples/documents/grid.html" class="btn"><i class="icon-th"></i></a>
+				</div>
+				<div class="btn-group pull-left">
+					<input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" placeholder="Filter results" data-items="4" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+				</div>
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">20 <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+				        <li><a href="#">5</a></li>
+				        <li><a href="#">10</a></li>
+				        <li><a href="#">20</a></li>
+				        <li><a href="#">50</a></li>
+				        <li><a href="#">100</a></li>
+				        <li class="divider"></li>
+				        <li><a href="#">All items</a></li>
+				      </ul>
+				</div>
+				<div class="btn-group pull-right">
+					<div class="pagination pagination-toolbar">
+				        <ul>
+				          <li class="disabled"><a href="#">«</a></li>
+				          <li class="active"><a href="#">1</a></li>
+				          <li><a href="#">2</a></li>
+				          <li><a href="#">3</a></li>
+				          <li><a href="#">4</a></li>
+				          <li><a href="#">»</a></li>
+				        </ul>
+				      </div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<hr />
+			<div class="row-fluid">
+		 		<div class="span7">Title</div>
+		 		<div class="span2">Tags</div>
+		 		<div class="span1">Type</div>
+		 		<div class="span2">Last Modified</div>
+			</div>
+			<div class="row-fluid row-odd">
+		 		<div class="span7">
+		 			<div class="btn-toolbar">
+		 				<div class="btn-group pull-left">
+		 				  <a data-toggle="modal" href="#imageModal" class="tip" rel="tooltip" title="Preview this file."><i class="icon-search"></i></a>
+		 				</div>
+		 				<div class="btn-group pull-left">
+		 					<h4><a href="#">Document Title</a></h4> 
+		 				</div>
+		 				<div class="btn-group pull-left">
+		 					<a class="dropdown-toggle btn btn-small" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+	 						<ul class="dropdown-menu">
+	 							<li class=""><a href="#">Edit</a></li>
+	 							<li class=""><a href="#">Preview</a></li>
+	 							<li class="divider"></li>
+	 							<li class=""><a href="#">Archive</a></li>
+	 							<li class=""><a href="#">Delete</a></li>
+	 						</ul>
+		 				</div>
+		 			</div>
+		 		</div>
+		 		<div class="span2">
+		 			<a href="#" class="label">design</a> <a href="#" class="label">task</a> <a href="#" class="label">joomla</a>
+		 		</div>
+		 		<div class="span1">
+		 			<span class="small">Image</span>
+		 		</div>
+		 		<div class="span2">
+		 			<span class="row-date">02/06/2011</span> 
+		 			<span class="small">by <a href="#">me</a></span>
+		 		</div>
+			 </div>
+			 <div class="row-fluid row-even">
+		 		<div class="span7">
+		 			<div class="btn-toolbar">
+		 				<div class="btn-group pull-left">
+		 				  <a data-toggle="modal" href="#imageModal" class="tip" rel="tooltip" title="Preview this file."><i class="icon-search"></i></a>
+		 				</div>
+		 				<div class="btn-group pull-left">
+		 					<h4><a href="#">Document Title</a></h4> 
+		 				</div>
+		 				<div class="btn-group pull-left">
+		 					<a class="dropdown-toggle btn btn-small" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+		 					<ul class="dropdown-menu">
+		 						<li class=""><a href="#">Edit</a></li>
+		 						<li class=""><a href="#">Preview</a></li>
+		 						<li class="divider"></li>
+		 						<li class=""><a href="#">Archive</a></li>
+		 						<li class=""><a href="#">Delete</a></li>
+		 					</ul>
+		 				</div>
+		 			</div>
+		 		</div>
+		 		<div class="span2">
+		 			<a href="#" class="label">design</a> <a href="#" class="label">task</a> <a href="#" class="label">joomla</a>
+		 		</div>
+		 		<div class="span1">
+		 			<span class="small">Image</span>
+		 		</div>
+		 		<div class="span2">
+		 			<span class="row-date">02/06/2011</span> 
+		 			<span class="small">by <a href="#">me</a></span>
+		 		</div>
+			</div>
+			<div class="row-fluid row-odd">
+					<div class="span7">
+						<div class="btn-toolbar">
+							<div class="btn-group pull-left">
+							  <a data-toggle="modal" href="#imageModal" class="tip" rel="tooltip" title="Preview this file."><i class="icon-search"></i></a>
+							</div>
+							<div class="btn-group pull-left">
+								<h4><a href="#">Document Title</a></h4> 
+							</div>
+							<div class="btn-group pull-left">
+								<a class="dropdown-toggle btn btn-small" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li class=""><a href="#">Edit</a></li>
+									<li class=""><a href="#">Preview</a></li>
+									<li class="divider"></li>
+									<li class=""><a href="#">Archive</a></li>
+									<li class=""><a href="#">Delete</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="span2">
+						<a href="#" class="label">design</a> <a href="#" class="label">task</a> <a href="#" class="label">joomla</a>
+					</div>
+					<div class="span1">
+						<span class="small">Image</span>
+					</div>
+					<div class="span2">
+						<span class="row-date">02/06/2011</span> 
+						<span class="small">by <a href="#">me</a></span>
+					</div>
+			</div>
+			<!-- End Placeholder -->
+		</div>
+	</div>
+	<hr />
+	<div class="footer"> </div>
+</div>
+
+<div class="modal fade" id="imageModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>File Name</h3>
+  </div>
+  <div class="modal-body">
+    <img src="http://placehold.it/400x300" alt="">
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">Save changes</a>
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+<!-- Le javascript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../../assets/js/jquery-1.7.1.min.js"></script> 
+<script src="../../../assets/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown()
+  $('.tip').tooltip()
+  $('.collapse').collapse('show')
+  $('#myModal').modal('hide')
+  $('.typeahead').typeahead()
+  $('.tabs').button()
+  $(".alert-message").alert()
+  $(window).bind("load resize", function() {
+   var windowHeight = "height:"+($(window).height()-45)+"px"; // height of full document
+   var windowWidth = "width:"+($(window).width()-30)+"px"; // width of full document
+   $('.side-nav, .fluid-content.main, .modal.full').attr('style', windowHeight);
+  });
+</script>
+</body>
+</html>

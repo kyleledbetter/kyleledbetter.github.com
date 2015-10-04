@@ -1,0 +1,46 @@
+<section id="main" class="mast mast-dark-trans mast-head">
+	<div class="container">
+		<div data-spy="affix" data-offset-top="30" class="page-title">
+			<h2 class="text-light h3">{{ page.date | date_to_string }}</h2>
+			{% if page.title %}<h1 class="h2">{{ page.title | truncatewords:7 }}</h1>{% endif %}
+			<hr class="separator" />
+			<div>
+				<a href="{{ HOME_PATH }}" data-toggle="tooltip" title="Back to homepage">Kyle Ledbetter</a> / <a href="../blog.html" data-toggle="tooltip" title="Kyle's Blog">Blog</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="blog" class="mast mast-white text-left page-content" data-spy="affix" data-offset-top="50">
+	<div class="container">
+		<div class="row push-top-lg">
+			<div class="col-sm-8 col-sm-offset-2 text-left">
+				<div class="text-xxl">{{ content }}</div>
+				<hr>
+				<img src="{{ ASSET_PATH }}twitter/images/kyle-ledbetter.jpg" class="img-circle" width="30"/> Follow Kyle Ledbetter on: <a href="http://twitter.com/kyleledbetter" class="text-info"><span aria-hidden="true" class="icon-twitter"></span> twitter</a> / <a href="http://dribbble.com/kyleledbetter" class="text-danger"><span aria-hidden="true" class="icon-dribbble"></span> dribbble</a> / <a href="http://instagram.com/kyleledbetter" class="text-warning"><span aria-hidden="true" class="icon-instagram"></span> instagram</a>
+				<hr>
+				<ul class="pager">
+					{% if page.previous %}
+					<li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+					{% else %}
+					<li class="previous disabled"><a>&larr; Previous</a></li>
+					{% endif %}
+					{% if page.next %}
+					<li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+					{% else %}
+					<li class="next disabled"><a>Next &rarr;</a>
+					{% endif %}
+				</ul>
+				<hr>
+				{% include JB/comments %}
+
+				{% unless page.tags == empty %}
+				<hr />
+				<ul class="list-inline list-labels">
+				{% assign tags_list = page.tags %}
+				{% include JB/tags_list %}
+				</ul>
+				{% endunless %}  
+			</div>
+		</div>
+	</div>
+</section>

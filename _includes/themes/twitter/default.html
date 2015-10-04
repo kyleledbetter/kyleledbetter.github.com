@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Kyle Ledbetter</title>
+	<link href="{{ ASSET_PATH }}/css/application.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="{{ ASSET_PATH }}/js/html5shiv.js"></script>
+	<script src="{{ ASSET_PATH }}/js/respond/respond.min.js"></script>
+	<![endif]-->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ ASSET_PATH }}/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ ASSET_PATH }}/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ ASSET_PATH }}/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ ASSET_PATH }}/ico/apple-touch-icon-57-precomposed.png">
+	<link href="{{ ASSET_PATH }}/ico/favicon.png" rel="shortcut icon" type="image/x-icon" />
+	<script src="{{ ASSET_PATH }}/js/modernizr.custom.js"></script>
+	<script type="text/javascript">
+		// Google
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-17659530-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+	<script type="text/javascript">
+	        var _StatHat = _StatHat || [];
+	        _StatHat.push(['_setUser', 'MzUwNCC_01cwI-f17_CWHlIxOLQh']);
+	        (function() {
+	                var sh = document.createElement('script'); sh.type = 'text/javascript';
+	                sh.async = true;
+	                sh.src = '//www.stathat.com/javascripts/api.js';
+	                var s = document.getElementsByTagName('script')[0];
+	                s.parentNode.insertBefore(sh, s);
+	        })();
+	</script>
+</head>
+{% if page.type == "home" %}
+	<body class="home bg bg-1">
+	<!-- begin content -->
+	<div class="content">
+		<section id="main" class="mast mast-trans mast-head">
+			<div class="container">
+				<div data-spy="affix" data-offset-top="30" class="page-title">
+					<h2 class="text-light">USER EXPERIENCE / USER INTERFACE</h2>
+					<h1>DESIGNER / DEVELOPER</h1>
+					<hr class="separator" />
+					<a href="" class="contact-toggle btn btn-lg btn-border"><span aria-hidden="true" class="icon-mail"></span> Contact Me</a>
+					<ul class="list-inline list-social text-50 push-top-lg">
+						<li><a href="http://twitter.com/kyleledbetter"><span aria-hidden="true" class="icon-twitter" title="Twitter"></span></a></li>
+						<li><a href="http://dribbble.com/kyleledbetter"><span aria-hidden="true" class="icon-dribbble" title="Dribbble"></span></a></li>
+						<li><a href="http://instagram.com/kyleledbetter"><span aria-hidden="true" class="icon-instagram" title="Instagram"></span></a></li>
+						<li><a href="" class="contact-toggle"><span aria-hidden="true" class="icon-mail" title="Email"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div id="header" class="header">
+			<div class="container text-center">
+				<a class="sidebar-toggle pull-left btn btn-lg btn-none visible-xs"><span aria-hidden="true" class="icon-menu"></span></a>
+				<ul class="list-inline hidden-xs list-nav">
+					<li><a href="#about" data-toggle="tooltip" title="Who's this dude?" class="smooth">About</a></li>
+					<li><a href="#portfolio" data-toggle="tooltip" title="Let's see whatcha got" class="smooth">Portfolio</a></li>
+					<li><a href="#blog" data-toggle="tooltip" title="Got somethin' to say?" class="smooth">Blog</a></li>
+					<li class="list-item-logo"><a href="#main" class="smooth"><span aria-hidden="true" class="logo"></span></a></li>
+					<li><a href="#skills" data-toggle="tooltip" title="Any cool tricks?" class="smooth">Skills</a></li>
+					<li><a href="#work" data-toggle="tooltip" title="Proof's in the pudding" class="smooth">Work</a></li>
+					<li><a href="" class="contact-toggle" data-toggle="tooltip" title="Let's chat">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<section id="about" class="mast mast-dark mast-collab" data-spy="scroll" data-target="#header">
+			<div class="container">
+				<h3 class="h2">About Kyle</h3>
+				<p class="text-30">My career began in Louisiana designing Flash and 3D animation, and I’ve arrived as an all around UX designer working in Texas & California.</p>
+				<p class="text-30">I wonder what’s next... </p>
+				<hr class="separator" />
+				<div class="row text-left push-top-lg push-bottom-lg">
+					<div class="col-sm-4 col-state col-la">
+						<p class="text-xxl">Born in Lafayette and raised in Baton Rouge where I attended LSU and graduated from ULL in 3D animation. I visit New Orleans as much as possible and am a Tiger fan. I will always choose Cajun food over Creole.</p>
+					</div>
+					<div class="col-sm-4 col-state col-tx">
+						<p class="text-xxl">I moved to Austin in 2003 with no job and started a web design firm. I met my lovely wife one year later and we’ve grown our businesses and lives together in ATX. We now live in the area of “Dirty Six” in downtown. I've become a BBQ and taco snob.</p>
+					</div>
+					<div class="col-sm-4 col-state col-ca">
+						<p class="text-xxl">I first travelled to Cali in 2010 for a Joomla convention. A year and half later I was hired by eBay to head up the UX for a massive analytics portal. After that I moved on to a Sears analytics team also in CA. Something tells me I’ll be back...</p>
+					</div>
+				</div>
+				<a href="#portfolio" class="btn btn-lg btn-trans"><span aria-hidden="true" class="icon-arrow-bottom push-right-sm"></span> View Recent Designs</a>
+			</div>
+		</section>
+		<section id="portfolio" class="mast mast-yellow">
+			<div class="container">
+				<h3 class="h2">Portfolio</h3>
+				<p class="text-xxl">I’ve built roughly 10,382 unique user interfaces for every imaginable usage. I’ve currently nestled myself into a niche for building massive UI libraries based on Bootstrap, focusing on analytics powered by D3.js</p>
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="panel panel-default push-top-lg">
+							<div class="panel-heading clearfix">
+								<div class="btn-toolbar btn-controls text-center">
+									<div class="btn-group">
+										<a href="#" class="close-app"><span aria-hidden="true" class="circle circle-danger"></span></a>
+									</div>
+									<div class="btn-group">
+										<a href="#"><span aria-hidden="true" class="circle circle-warning"></span></a>
+									</div>
+									<div class="btn-group">
+										<a href="#"><span aria-hidden="true" class="circle circle-success"></span></a>
+									</div>
+									<div class="btn-group">&nbsp;</div>
+									<div class="btn-group">
+										<a href="#carousel-photos" data-slide="prev" class="btn btn-trans btn-xs"><span aria-hidden="true" class="icon-arrow-left"></span></a>
+										<a href="#carousel-photos" data-slide="next" class="btn btn-trans btn-xs"><span aria-hidden="true" class="icon-arrow-right"></span></a>
+									</div>
+								</div>
+							</div>
+							<div id="carousel-photos" class="carousel slide">
+								<div class="carousel-inner">
+									<div class="item active">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen9.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/analytics/" target="_blank" class="btn btn-lg btn-primary">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen8.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/bigdata/metric.html" target="_blank" class="btn btn-lg btn-primary">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen1.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/silo-3" target="_blank" class="btn btn-lg btn-primary">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen2.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/portfolio/distill/metric.html" target="_blank" class="btn btn-lg btn-warning">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen3.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/silo" target="_blank" class="btn btn-lg btn-success">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen4.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/hippohonk-ux" target="_blank" class="btn btn-lg btn-danger">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen5.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://joomla32.cloudaccess.net/administrator/index.php?autologin=1&passwd=demo&username=demo" target="_blank" class="btn btn-lg btn-primary">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ ASSET_PATH }}/images/portfolio/screen6.jpg" width="100%">
+										<div class="">
+											<div class="carousel-caption">
+												<p><a href="http://kyleledbetter.com/silo-2" target="_blank" class="btn btn-lg btn-warning">View Demo</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<a class="left carousel-control" href="#carousel-photos" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+								<a class="right carousel-control" href="#carousel-photos" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+							</div>
+							<div class="panel-footer"></div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-group">
+					<a href="{{ BASE_PATH }}portfolio.html" class="btn btn-lg btn-border"><span aria-hidden="true" class="icon-arrow-right-2"></span> View Portfolio</a> 
+					<a href="http://dribbble.com/kyleledbetter" target="_blank" class="btn btn-lg btn-border"><span aria-hidden="true" class="icon-dribbble"></span> Visit Dribbble</a>
+				</div>
+			</div>
+		</section>
+		<section id="blog" class="mast mast-trans bg-cover bg-2">
+			<div class="container">
+				<h3 class="h2">Kyle's Blog</h3>
+				<p class="text-30">My latest blog is powered by Github pages built on Jekyll for Bootstrap. This will probably change next week.</p>
+				<hr class="separator" />
+				<div class="row text-left">
+					<div class="col-sm-9 col-sm-offset-2 col-md-7 col-md-offset-3">
+						{% for post in site.posts limit:4 %}
+							<div class="media media-blog">
+								<div class="event event-lg pull-left">
+									<span class="month">{{ post.date | date: "%b" }}</span>
+									<span class="day">{{ post.date | date: "%-d" }}</span>
+									<span class="year">{{ post.date | date: "%Y" }}</span>
+								</div>
+								<h4><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h4>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+
+				<a href="/blog.html" class="btn btn-lg btn-danger"><span aria-hidden="true" class="icon-newspaper"></span> View Blog</a>
+			</div>
+		</section>
+		<section id="skills" class="mast mast-teal">
+			<div class="container">
+				<h3 class="h2">Skills</h3>
+				<p class="text-xxl">Jack of all UX trades, master of a growing list. My passion lies in crafting an emersive UX through beautiful UI & interactions. My current toolset is coding these UIs in Sublime Text, Bootstrap, jQuery, Highcharts and D3.js, but:</p>
+				<div class="well text-xl push-top">
+					Any good designer can design in ANY medium just like<br />any good developer can program in ANY language.
+				</div>
+				<div class="row text-left">
+					<div class="col-sm-8 hidden-xs">
+						<h4 class="page-header">Skill Distribution</h4>
+						<div id="chart-skills" class="push-right">
+							<svg></svg>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<h4 class="page-header">Focus</h4>
+						<div class="list-group list-group-striped push-top">
+							<div class="list-group-item">
+								<div class="text-medium">UI DESIGN</div>
+								<div class="progress progress-success">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">INTERACTION DESIGN</div>
+								<div class="progress progress-success">
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" >
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">RESPONSIVE DESIGN</div>
+								<div class="progress progress-info-light">
+									<div class="progress-bar progress-bar-info-light" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">INFORMATION ARCHITECTURE</div>
+								<div class="progress progress-info-light">
+									<div class="progress-bar progress-bar-info-light" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">USABILITY</div>
+								<div class="progress progress-info-light">
+									<div class="progress-bar progress-bar-info-light" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">BRANDING</div>
+								<div class="progress progress-warning">
+									<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+							<div class="list-group-item">
+								<div class="text-medium">CHART SCRIPTS</div>
+								<div class="progress progress-danger">
+									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="work" class="mast mast-trans bg-cover bg-3">
+			<div class="container">
+				<h3 class="h2">Work</h3>
+				<p class="text-xxl">My career has taken a natural progression from client websites, to template clubs, to UI templates, to UX design, to complex analytical UX design.</p>
+				<hr class="separator" />
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> UX Architect</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>Teradata</h4>
+							<div class="timeline-text">Planning &amp; designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption &amp; dba/scientist productivity.</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> Senior UX Designer</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>MicroStrategy</h4>
+							<div class="timeline-text">Currently doing R&amp;D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> Principal UX Designer</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>Sears Holdings</h4>
+							<div class="timeline-text">Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> Principal Usability Engineer</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>eBay, Inc.</h4>
+							<div class="timeline-text">Designed the UI for a collaborative analytics platform web app with everything from blogs to charts, built on Bootstrap, PHP & Highcharts.js</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> UX Team Lead</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>Joomla! Open Source CMS</h4>
+							<div class="timeline-text">Led an international effort to completely re-engineer the UI/UX for a CMS that’s used on millions of websites, built on Bootstrap, PHP & jQuery</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> Design Firm Entrepeneur</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>Pixel Praise LLC</h4>
+							<div class="timeline-text">Operated a successful design firm started in college in 2002 which thrived in client work & template shops in Austin, TX</div>
+						</div>
+					</div>
+				</div>
+				<div class="row row-timeline text-left">
+					<div class="col-sm-4">
+						<div class="timeline-heading"><span aria-hidden="true" class="circle circle-warning"></span> Bachelor of Fine Arts</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="timeline-body">
+							<h4>ULL &amp; LSU</h4>
+							<div class="timeline-text">Began as a Graphic Designer for LSU and graduated as a 3D animator from ULL with an internship building Flash websites. Go figure...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="mast mast-dark">
+			<div class="container">
+				<h3 class="h2">Thanks!</h3>
+				<p class="text-xxl">Want to chat about something?</p>
+				<a href="" class="contact-toggle btn btn-lg btn-border push-bottom"><span aria-hidden="true" class="icon-mail"></span> Contact Me</a>
+				
+				<ul class="list-inline list-social text-30">
+					<li><a href="http://twitter.com/kyleledbetter"><span aria-hidden="true" class="icon-twitter" title="Twitter"></span></a></li>
+					<li><a href="http://dribbble.com/kyleledbetter"><span aria-hidden="true" class="icon-dribbble" title="Dribbble"></span></a></li>
+					<li><a href="http://instagram.com/kyleledbetter"><span aria-hidden="true" class="icon-instagram" title="Instagram"></span></a></li>
+					<li><a href="" class="contact-toggle"><span aria-hidden="true" class="icon-mail" title="Email"></span></a></li>
+				</ul>
+				<p class="push-top">Made in <span data-toggle="tooltip" title="Austin Texas Yo!">ATX</span> &amp; &copy; <a href="http://twitter.com/kyleledbetter">Kyle Ledbetter</a></p>
+			</div>
+		</footer>
+	</div>
+	<!-- end content -->
+
+	<!-- begin sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-heading">
+			<a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<a class="sidebar-brand smooth" href="#main"><img src="{{ ASSET_PATH }}/images/logo-white.png" width="70" /></a>
+		</div>
+		<hr />
+		<ul class="nav nav-stacked text-xxl">
+			<li class=""><a href="#about" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-info text-muted"></span> About</a></li>
+			<li class=""><a href="#portfolio" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-screen text-warning"></span> Portfolio</a></li>
+			<li class=""><a href="#blog" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-newspaper text-danger"></span> Blog</a></li>
+			<li class=""><a href="#skills" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-pie text-info"></span> Skills</a></li>
+			<li class=""><a href="#work" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-cog text-warning"></span> Work History</a></li>
+			<li class=""><a href="" class="contact-toggle"><span aria-hidden="true" class="icon-mail text-muted"></span> Contact</a></li>
+		</ul>
+		<hr />
+	</div>
+	<!-- end sidebar -->
+
+	<!-- begin aside -->
+	<div class="aside">
+		<div class="aside-heading">
+			<a class="aside-toggle pull-left btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<div class="h4">Contact Me</div>
+		</div>
+		<div id="wufoo-q7x3p3">
+			Direct link <a href="http://ledbetter.wufoo.com/forms/q7x3p3">to contact form</a>.
+		</div>
+		<script type="text/javascript">var q7x3p3;(function(d, t) {
+		var s = d.createElement(t), options = {
+		'userName':'ledbetter', 
+		'formHash':'q7x3p3', 
+		'autoResize':true,
+		'height':'597',
+		'async':true,
+		'header':'show'};
+		s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+		s.onload = s.onreadystatechange = function() {
+		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+		try { q7x3p3 = new WufooForm();q7x3p3.initialize(options);q7x3p3.display(); } catch (e) {}};
+		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+		})(document, 'script');</script>
+
+	</div>
+	<!-- end aside -->
+	
+	<!-- begin backgrounds -->
+	<div class="bg bg-1"></div>
+	<div class="bg bg-2"></div>
+	<div class="bg bg-3"></div>
+	<!-- end backgrounds -->
+
+	<script type="text/javascript" src="//use.typekit.net/lof0toq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="{{ ASSET_PATH }}/js/jquery.js"></script>
+	<script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script>
+	<script src="{{ ASSET_PATH }}/js/application.js"></script>
+	<script src="{{ ASSET_PATH }}/js/highcharts.js"></script>
+	<script>
+		$(function () {
+		var chart;
+		$(document).ready(function() {
+
+		var colors = Highcharts.getOptions().colors,
+		categories = ['UX', 'Web', 'Graphics', 'JS'],
+		name = 'Browser brands',
+		data = [{
+		y: 48,
+		color: '#60867E',
+		drilldown: {
+			name: 'User Experience',
+			categories: ['UI Design', 'User Interaction', 'Information Arch', 'Accessibility'],
+			data: [20, 10, 6, 3],
+			color: '#60867E'
+			}
+		}, {
+		y: 24,
+		color: '#7FB0A6',
+		drilldown: {
+			name: 'Web Programming',
+			categories: ['CSS3', 'HTML5', 'LESS', 'PHP', 'jQuery'],
+			data: [8, 4, 3, 3, 1],
+			color: '#7FB0A6'
+			}
+		}, {
+		y: 18,
+		color: '#E39F1C',
+		drilldown: {
+			name: 'Graphic Design',
+			categories: ['Logos', 'Icons', 'Brochures'],
+			data: [9, 4, 1],
+			color: '#E39F1C'
+			}
+		}, {
+		y: 13,
+		color: '#D24A27',
+		drilldown: {
+			name: 'Chart JS',
+			categories: ['jQuery', 'Highcharts', 'D3js'],
+			data: [5, 4, 2],
+			color: '#D24A27'
+			}
+		}];
+
+
+		// Build the data arrays
+		var browserData = [];
+		var versionsData = [];
+		for (var i = 0; i < data.length; i++) {
+
+		// add browser data
+		browserData.push({
+		name: categories[i],
+		y: data[i].y,
+		color: data[i].color
+		});
+
+		// add version data
+		for (var j = 0; j < data[i].drilldown.data.length; j++) {
+		var brightness = 0.2 - (j / data[i].drilldown.data.length) / 5 ;
+		versionsData.push({
+		name: data[i].drilldown.categories[j],
+		y: data[i].drilldown.data[j],
+		color: Highcharts.Color(data[i].color).brighten(brightness).get()
+		});
+		}
+		}
+
+		// Create the chart
+		chart = new Highcharts.Chart({
+		chart: {
+			animation: {
+                duration: 10000,
+                easing: 'easeOutBounce'
+            },
+			renderTo: 'chart-skills',
+			type: 'pie',
+			margin: [0, 0, 0, -20],
+			backgroundColor: 'transparent'
+
+		},
+		title: {
+		text: ''
+		},
+		yAxis: {
+		title: {
+		text: ''
+		}
+		},
+		plotOptions: {
+			pie: {
+				shadow: false
+			},
+			series: {
+				dataLabels: {
+					style: {
+						color: 'rgba(255, 255, 255, 0.6)',
+						fontWeight: 'normal'
+					}
+				}
+			}
+		},
+		credits: {
+		enabled: false
+		},
+		tooltip: {
+		valueSuffix: '%'
+		},
+		series: [{
+		name: 'Skills',
+		data: browserData,
+		size: '60%',
+		dataLabels: {
+		formatter: function() {
+		return this.y > 5 ? this.point.name : null;
+		},
+		color: 'rgba(0, 0, 0, 0.4)',
+		distance: -30
+		}
+		}, {
+		name: 'Focus',
+		data: versionsData,
+		innerSize: '60%',
+		dataLabels: {
+		formatter: function() {
+		// display only if larger than 1
+		return this.y > 1 ? '<b>'+ this.point.name +':</b> '+ this.y +'%'  : null;
+		}
+		}
+		}]
+		});
+		});
+
+		});
+	</script>
+	{% include JB/analytics %}
+	<script type="text/javascript">_StatHat.push(['_trackCount', '2RUPaiwmHS_dTII7oMeBbiBSNHhN', 13.0]);</script>
+</body>
+{% else %}
+<body class="blog bg bg-1">
+	<!-- begin content -->
+	<div class="content">
+		{{content}}
+		<footer class="mast mast-dark">
+			<div class="container">
+				<h3 class="h2">Thanks!</h3>
+				<p class="text-xxl">Want to chat about something?</p>
+				<a href="" class="contact-toggle btn btn-lg btn-border push-bottom"><span aria-hidden="true" class="icon-mail"></span> Contact Me</a>
+				
+				<ul class="list-inline list-social text-30">
+					<li><a href="http://twitter.com/kyleledbetter"><span aria-hidden="true" class="icon-twitter" title="Twitter"></span></a></li>
+					<li><a href="http://dribbble.com/kyleledbetter"><span aria-hidden="true" class="icon-dribbble" title="Dribbble"></span></a></li>
+					<li><a href="http://instagram.com/kyleledbetter"><span aria-hidden="true" class="icon-instagram" title="Instagram"></span></a></li>
+					<li><a href="" class="contact-toggle"><span aria-hidden="true" class="icon-mail" title="Email"></span></a></li>
+				</ul>
+				<p class="push-top">Made in <span data-toggle="tooltip" title="Austin Texas Yo!">ATX</span> &amp; &copy; <a href="http://twitter.com/kyleledbetter">Kyle Ledbetter</a></p>
+			</div>
+		</footer>
+	</div>
+	<!-- end content -->
+
+	<!-- begin sidebar -->
+	<div class="sidebar">
+		<div class="sidebar-heading">
+			<a class="sidebar-toggle pull-right btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<a class="sidebar-brand smooth" href="#main"><img src="{{ ASSET_PATH }}/images/logo-white.png" width="70" /></a>
+		</div>
+		<hr />
+		<ul class="nav nav-stacked text-xxl">
+			<li class=""><a href="#about" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-info text-muted"></span> About</a></li>
+			<li class=""><a href="#portfolio" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-screen text-warning"></span> Portfolio</a></li>
+			<li class=""><a href="#blog" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-newspaper text-danger"></span> Blog</a></li>
+			<li class=""><a href="#skills" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-pie text-info"></span> Skills</a></li>
+			<li class=""><a href="#work" class="sidebar-toggle smooth"><span aria-hidden="true" class="icon-cog text-warning"></span> Work History</a></li>
+			<li class=""><a href="" class="contact-toggle"><span aria-hidden="true" class="icon-mail text-muted"></span> Contact</a></li>
+		</ul>
+		<hr />
+	</div>
+	<!-- end sidebar -->
+
+	<!-- begin aside -->
+	<div class="aside">
+		<div class="aside-heading">
+			<a class="aside-toggle pull-left btn btn-none btn-lg"><span aria-hidden="true" class="icon-cancel-circle"></span></a>
+			<div class="h4">Contact Me</div>
+		</div>
+		<div id="wufoo-q7x3p3">
+			Direct link <a href="http://ledbetter.wufoo.com/forms/q7x3p3">to contact form</a>.
+		</div>
+		<script type="text/javascript">var q7x3p3;(function(d, t) {
+		var s = d.createElement(t), options = {
+		'userName':'ledbetter', 
+		'formHash':'q7x3p3', 
+		'autoResize':true,
+		'height':'597',
+		'async':true,
+		'header':'show'};
+		s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+		s.onload = s.onreadystatechange = function() {
+		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+		try { q7x3p3 = new WufooForm();q7x3p3.initialize(options);q7x3p3.display(); } catch (e) {}};
+		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+		})(document, 'script');</script>
+
+	</div>
+	<!-- end aside -->
+	
+
+	<script type="text/javascript" src="//use.typekit.net/lof0toq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="{{ ASSET_PATH }}/js/jquery.js"></script>
+	<script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script>
+	<script src="{{ ASSET_PATH }}/js/application.js"></script>
+	
+	{% include JB/analytics %}
+	<script type="text/javascript">_StatHat.push(['_trackCount', '2RUPaiwmHS_dTII7oMeBbiBSNHhN', 13.0]);</script>
+</body>
+{% endif %}
+
+</html>

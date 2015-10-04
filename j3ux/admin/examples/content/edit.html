@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="admin">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Joomla 3.0</title>
+<link href="../../../assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap.extended.css" rel="stylesheet" type="text/css" />
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css" />
+<link href="../../../assets/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+
+	<!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/ico/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/ico/apple-touch-icon-114x114.png">
+    
+</head>
+<body>
+<!-- Top Navigation -->
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="../../index.html">Joomla 3.0</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="../../index.html">Dashboard</a></li>
+					<li><a href="../../examples/pages">Pages</a></li>
+					<li class="active"><a href="../../examples/content">Content</a></li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Extensions <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/blog">Blog</a></li>
+							<li class=""><a href="../../examples/community">Community</a></li>
+							<li class=""><a href="../../examples/gallery">Gallery</a></li>
+							<li class=""><a href="../../examples/shop">Shop</a></li>
+							<li class=""><a href="../../examples/events">Events</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/forms">Forms</a></li>
+							<li class=""><a href="../../examples/rss">RSS Feeds</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/extensions">Manage Extensions</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administration <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/users">Users</a></li>
+							<li class=""><a href="../../examples/permissions">Permissions</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/documents">Documents</a></li>
+							<li class=""><a href="../../examples/cache">Cache</a></li>
+							<li class=""><a href="../../examples/versions">Versions</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/settings">Global Settings</a></li>
+							<li class=""><a href="../../examples/settings/core.html">Core Components</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/settings/extensions.html">Extensions</a></li>
+							<li class=""><a href="../../examples/settings/templates.html">Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Design <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/templates/">Site Templates</a></li>
+							<li class=""><a href="../../examples/templates/admin.html">Admin Templates</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">firstname.lastname <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class=""><a href="../../examples/account">Account</a></li>
+							<li class=""><a href="../../examples/account/edit.html">Edit Account</a></li>
+							<li class="divider"></li>
+							<li class=""><a href="../../examples/login">Sign Out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Header -->
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<a class="logo" href="../../index.html">Joomla 3.0 Admin</a>
+			</div>
+			<div class="span10">
+				<form class="navbar-search">
+	      			<input type="text" class="search-query" placeholder="Search" style="margin: 0 auto;" data-provide="typeahead" data-items="10" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+	      		</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Subheader -->
+<div class="subhead">
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<h1>Content</h1>
+			</div>
+			<div class="span10">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						  Actions 
+						  <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						  <li class="divider"></li>
+						  <li><a href="#">Action</a></li>
+						  <li><a href="#">Action</a></li>
+						</ul>
+					</div>
+			        <div class="btn-group">
+			          <a class="btn" href="#"><i class="icon-file"></i> Copy</a>
+			          <a class="btn" href="#"><i class="icon-share-alt"></i> Move</a>
+			          <a class="btn" href="#"><i class="icon-remove"></i> Delete</a>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-calendar"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Publish</a></li>
+			        	  <li><a href="#">Unpublish</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-folder-open"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Category One</a></li>
+			        	  <li><a href="#">Category Two</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-inbox"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Archive</a></li>
+			        	  <li><a href="#">Unarchive</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-cog"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Config One</a></li>
+			        	  <li><a href="#">Config Two</a></li>
+			        	</ul>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			        	  <i class="icon-th-list"></i> 
+			        	  <span class="caret"></span>
+			        	</a>
+			        	<ul class="dropdown-menu">
+			        	  <li><a href="#">Sort by Title</a></li>
+			        	  <li><a href="#">Sort by Created date</a></li>
+			        	</ul>
+			        </div>
+			     </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="span2">
+		<!-- Begin Placeholder -->
+			<div class="btn-group">
+			  <a class="btn btn-large btn-primary btn-wide disabled" href="../../examples/content/edit.html">
+			    Create 
+			  </a>
+			</div>
+			<hr />
+			<div class="sidebar-nav">
+				<ul class="nav nav-list">
+	              <li class="nav-header">Submenu</li>
+	              <li class="active"><a href="#">Content</a></li>
+	              <li><a href="#">Categories</a></li>
+	              <li><a href="#">Featured</a></li>
+	              <li><a href="#">Archived</a></li>
+	              <li><a href="#">Trashed</a></li>
+	              <li class="nav-header">Categories</li>
+	              <li><a href="#"><i class="icon-folder-open"></i> Category One</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory One</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory Two</a></li>
+	              <li class="offset"><a href="#"><i class="icon-folder-close"></i> SubCategory Three</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	              <li><a href="#"><i class="icon-folder-close"></i> Category One</a></li>
+	            </ul>
+            </div>
+        <!-- End Placeholder -->
+		</div>
+		<div class="span10">
+			<!-- Begin Placeholder -->
+			<form class="row-fluid" action="com_pages.html">
+			    <fieldset>
+			      <ul id="tab" class="nav nav-tabs">
+			          <li class="active"><a href="#general" data-toggle="tab">General</a></li>
+			          <li class=""><a href="#settings" data-toggle="tab">Settings</a></li>
+			          <li class=""><a href="#advanced" data-toggle="tab">Advanced</a></li>
+			          <li class=""><a href="#access" data-toggle="tab">Access</a></li>
+			      </ul>
+			      <div id="myTabContent" class="tab-content">
+			          <div class="tab-pane fade active in" id="general">
+			            <div class="control-group">
+			              <div class="controls-wide">
+			                <input type="text" class="input-xlarge" id="input01" placeholder="Title">
+			                 in <select id="select01">
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                   <option>Category</option>
+			                 </select>
+			              </div>
+			            </div>
+			            <div class="control-group">
+			              <div class="controls-wide">
+			              	<div class="btn-toolbar">
+		              	        <div class="btn-group">
+		              	          <a class="btn" data-toggle="button"><i class="icon-bold"></i></a>
+		              	          <a class="btn" data-toggle="button"><i class="icon-italic"></i></a>
+		              	          <a class="btn" data-toggle="button"><i class="icon-font"></i></a>
+		              	        </div>
+		              	        <div class="btn-group">
+		              	        	<a class="btn" data-toggle="button"><i class="icon-align-left"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-align-center"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-align-right"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-align-justify"></i></a>
+		              	        </div>
+		              	        <div class="btn-group">
+		              	        	<a class="btn" data-toggle="button"><i class="icon-list"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-indent-left"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-indent-right"></i></a>
+		              	        </div>
+		              	        <div class="btn-group">
+		              	        	<a class="btn" data-toggle="button"><i class="icon-share-alt"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-facetime-video"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-picture"></i></a>
+		              	        	<a class="btn" data-toggle="button"><i class="icon-file"></i></a>
+		              	        </div>
+		              	        <div class="btn-group">
+		              	        	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#style">
+	              	        	      Styles
+	              	        	      <b class="caret"></b>
+	              	        	    </a>
+	              	        	    <ul class="dropdown-menu">
+	              	        	      <li><a href="#">Style 1</a></li>
+	              	        	      <li><a href="#">Style 2</a></li>
+	              	        	      <li><a href="#">Style 3</a></li>
+	              	        	      <li class="divider"></li>
+	              	        	      <li><a href="#">Remove Styles</a></li>
+	              	        	    </ul>
+		              	        </div>
+		              	        <div class="btn-group pull-right" data-toggle="buttons-radio">
+		              	          <a class="btn"><i class="icon-pencil"></i> Design</a>
+		              	          <a class="btn active"><i class="icon-asterisk"></i> HTML</a>
+		              	        </div>
+		              	      </div>
+			                <textarea class="input-xlarge span10" id="editor" rows="10"></textarea>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="tab-pane fade" id="settings">
+		                    <fieldset class="form-horizontal">
+		                      <div class="control-group">
+		                        <label class="control-label">Form grid sizes</label>
+		                        <div class="controls docs-input-sizes">
+		                          <input class="span1" type="text" placeholder=".span1">
+		                          <input class="span2" type="text" placeholder=".span2">
+		                          <input class="span3" type="text" placeholder=".span3">
+		                          <select class="span1">
+		                            <option>1</option>
+		                            <option>2</option>
+		                            <option>3</option>
+		                            <option>4</option>
+		                            <option>5</option>
+		                          </select>
+		                          <select class="span2">
+		                            <option>1</option>
+		                            <option>2</option>
+		                            <option>3</option>
+		                            <option>4</option>
+		                            <option>5</option>
+		                          </select>
+		                          <select class="span3">
+		                            <option>1</option>
+		                            <option>2</option>
+		                            <option>3</option>
+		                            <option>4</option>
+		                            <option>5</option>
+		                          </select>
+		                          <p class="help-block">Use the same <code>.span*</code> classes from the grid system for input sizes.</p>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label">Alternate sizes</label>
+		                        <div class="controls docs-input-sizes">
+		                          <input class="input-mini" type="text" placeholder=".input-mini">
+		                          <input class="input-small" type="text" placeholder=".input-small">
+		                          <input class="input-medium" type="text" placeholder=".input-medium">
+		                          <p class="help-block">You may also use static classes that don't map to the grid, adapt to the responsive CSS styles, or account for varying types of controls (e.g., <code>input</code> vs. <code>select</code>).</p>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="prependedInput">Prepended text</label>
+		                        <div class="controls">
+		                          <div class="input-prepend">
+		                            <span class="add-on">@</span><input class="span2" id="prependedInput" size="16" type="text">
+		                          </div>
+		                          <p class="help-block">Here's some help text</p>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="appendedInput">Appended text</label>
+		                        <div class="controls">
+		                          <div class="input-append">
+		                            <input class="span2" id="appendedInput" size="16" type="text"><span class="add-on">.00</span>
+		                          </div>
+		                          <span class="help-inline">Here's more help text</span>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="appendedPrependedInput">Append and prepend</label>
+		                        <div class="controls">
+		                          <div class="input-prepend input-append">
+		                            <span class="add-on">$</span><input class="span2" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+		                          </div>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="appendedPrependedInput">Append with button</label>
+		                        <div class="controls">
+		                          <div class="input-append">
+		                            <input class="span2" id="appendedPrependedInput" size="16" type="text"><button class="btn" type="button">Go!</button>
+		                          </div>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="inlineCheckboxes">Inline checkboxes</label>
+		                        <div class="controls">
+		                          <label class="checkbox inline">
+		                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+		                          </label>
+		                          <label class="checkbox inline">
+		                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+		                          </label>
+		                          <label class="checkbox inline">
+		                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+		                          </label>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label" for="optionsCheckboxList">Checkboxes</label>
+		                        <div class="controls">
+		                          <label class="checkbox">
+		                            <input type="checkbox" name="optionsCheckboxList1" value="option1">
+		                            Option one is this and that—be sure to include why it's great
+		                          </label>
+		                          <label class="checkbox">
+		                            <input type="checkbox" name="optionsCheckboxList2" value="option2">
+		                            Option two can also be checked and included in form results
+		                          </label>
+		                          <label class="checkbox">
+		                            <input type="checkbox" name="optionsCheckboxList3" value="option3">
+		                            Option three can—yes, you guessed it—also be checked and included in form results
+		                          </label>
+		                          <p class="help-block"><strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.</p>
+		                        </div>
+		                      </div>
+		                      <div class="control-group">
+		                        <label class="control-label">Radio buttons</label>
+		                        <div class="controls">
+		                          <label class="radio">
+		                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+		                            Option one is this and that—be sure to include why it's great
+		                          </label>
+		                          <label class="radio">
+		                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		                            Option two can is something else and selecting it will deselect option one
+		                          </label>
+		                        </div>
+		                      </div>
+		                    </fieldset>
+			          </div>
+			          <div class="tab-pane fade" id="advanced">
+			                    <fieldset class="form-horizontal">
+			                      <div class="control-group">
+			                        <label class="control-label">Form grid sizes</label>
+			                        <div class="controls docs-input-sizes">
+			                          <input class="span1" type="text" placeholder=".span1">
+			                          <input class="span2" type="text" placeholder=".span2">
+			                          <input class="span3" type="text" placeholder=".span3">
+			                          <select class="span1">
+			                            <option>1</option>
+			                            <option>2</option>
+			                            <option>3</option>
+			                            <option>4</option>
+			                            <option>5</option>
+			                          </select>
+			                          <select class="span2">
+			                            <option>1</option>
+			                            <option>2</option>
+			                            <option>3</option>
+			                            <option>4</option>
+			                            <option>5</option>
+			                          </select>
+			                          <select class="span3">
+			                            <option>1</option>
+			                            <option>2</option>
+			                            <option>3</option>
+			                            <option>4</option>
+			                            <option>5</option>
+			                          </select>
+			                          <p class="help-block">Use the same <code>.span*</code> classes from the grid system for input sizes.</p>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label">Alternate sizes</label>
+			                        <div class="controls docs-input-sizes">
+			                          <input class="input-mini" type="text" placeholder=".input-mini">
+			                          <input class="input-small" type="text" placeholder=".input-small">
+			                          <input class="input-medium" type="text" placeholder=".input-medium">
+			                          <p class="help-block">You may also use static classes that don't map to the grid, adapt to the responsive CSS styles, or account for varying types of controls (e.g., <code>input</code> vs. <code>select</code>).</p>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="prependedInput">Prepended text</label>
+			                        <div class="controls">
+			                          <div class="input-prepend">
+			                            <span class="add-on">@</span><input class="span2" id="prependedInput" size="16" type="text">
+			                          </div>
+			                          <p class="help-block">Here's some help text</p>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="appendedInput">Appended text</label>
+			                        <div class="controls">
+			                          <div class="input-append">
+			                            <input class="span2" id="appendedInput" size="16" type="text"><span class="add-on">.00</span>
+			                          </div>
+			                          <span class="help-inline">Here's more help text</span>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="appendedPrependedInput">Append and prepend</label>
+			                        <div class="controls">
+			                          <div class="input-prepend input-append">
+			                            <span class="add-on">$</span><input class="span2" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+			                          </div>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="appendedPrependedInput">Append with button</label>
+			                        <div class="controls">
+			                          <div class="input-append">
+			                            <input class="span2" id="appendedPrependedInput" size="16" type="text"><button class="btn" type="button">Go!</button>
+			                          </div>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="inlineCheckboxes">Inline checkboxes</label>
+			                        <div class="controls">
+			                          <label class="checkbox inline">
+			                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+			                          </label>
+			                          <label class="checkbox inline">
+			                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+			                          </label>
+			                          <label class="checkbox inline">
+			                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+			                          </label>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label" for="optionsCheckboxList">Checkboxes</label>
+			                        <div class="controls">
+			                          <label class="checkbox">
+			                            <input type="checkbox" name="optionsCheckboxList1" value="option1">
+			                            Option one is this and that—be sure to include why it's great
+			                          </label>
+			                          <label class="checkbox">
+			                            <input type="checkbox" name="optionsCheckboxList2" value="option2">
+			                            Option two can also be checked and included in form results
+			                          </label>
+			                          <label class="checkbox">
+			                            <input type="checkbox" name="optionsCheckboxList3" value="option3">
+			                            Option three can—yes, you guessed it—also be checked and included in form results
+			                          </label>
+			                          <p class="help-block"><strong>Note:</strong> Labels surround all the options for much larger click areas and a more usable form.</p>
+			                        </div>
+			                      </div>
+			                      <div class="control-group">
+			                        <label class="control-label">Radio buttons</label>
+			                        <div class="controls">
+			                          <label class="radio">
+			                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+			                            Option one is this and that—be sure to include why it's great
+			                          </label>
+			                          <label class="radio">
+			                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			                            Option two can is something else and selecting it will deselect option one
+			                          </label>
+			                        </div>
+			                      </div>
+			                    </fieldset>
+			          </div>
+			          <div class="tab-pane fade" id="access">
+			          	<div class="row">
+			          		<div class="span1">
+					          	<ul class="nav nav-pills nav-stacked">
+					          	  <li class="active"><a href="#public" data-toggle="tab">Public</a></li>
+					          	  <li><a href="#private" data-toggle="tab">Private</a></li>
+					          	  <li><a href="#admins" data-toggle="tab">Admins</a></li>
+					          	  <li><a href="#super" data-toggle="tab">Super Users</a></li>
+					          	</ul>
+				          	</div>
+				          	<div class="span7">
+					          	<div class="tab-content">
+					          	  <div class="tab-pane active" id="public">
+				          	  		<div class="control-group">
+		          	  		            <div class="controls">
+		          	  		              <label class="checkbox inline">
+		          	  		                <input type="checkbox" id="inlineCheckbox1" value="option1"> View
+		          	  		              </label>
+		          	  		            </div>
+		          	  		          </div>
+		          	  		         <div class="control-group">
+	          	  		              <div class="controls">
+	          	  		                <label class="checkbox inline">
+	          	  		                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Edit
+	          	  		                </label>
+	          	  		              </div>
+	          	  		            </div>
+	          	  		            <div class="control-group">
+	          	  		                <div class="controls">
+	          	  		                  <label class="checkbox inline">
+	          	  		                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Publish
+	          	  		                  </label>
+	          	  		                </div>
+	          	  		              </div>
+	          	  		              <div class="control-group">
+	          	  		                  <div class="controls">
+	          	  		                    <label class="checkbox inline">
+	          	  		                      <input type="checkbox" id="inlineCheckbox4" value="option4"> Delete
+	          	  		                    </label>
+	          	  		                  </div>
+	          	  		                </div>
+					          	  </div>
+					          	  <div class="tab-pane" id="private">
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox1" value="option1" checked> View
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	 <div class="control-group">
+					          	  	  <div class="controls">
+					          	  	    <label class="checkbox inline">
+					          	  	      <input type="checkbox" id="inlineCheckbox2" value="option2"> Edit
+					          	  	    </label>
+					          	  	  </div>
+					          	  	</div>
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox3" value="option3"> Publish
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	  <div class="control-group">
+					          	  	      <div class="controls">
+					          	  	        <label class="checkbox inline">
+					          	  	          <input type="checkbox" id="inlineCheckbox4" value="option4"> Delete
+					          	  	        </label>
+					          	  	      </div>
+					          	  	    </div>
+					          	  </div>
+					          	  <div class="tab-pane" id="admins">
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox1" value="option1" checked> View
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	 <div class="control-group">
+					          	  	  <div class="controls">
+					          	  	    <label class="checkbox inline">
+					          	  	      <input type="checkbox" id="inlineCheckbox2" value="option2" checked> Edit
+					          	  	    </label>
+					          	  	  </div>
+					          	  	</div>
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox3" value="option3" checked> Publish
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	  <div class="control-group">
+					          	  	      <div class="controls">
+					          	  	        <label class="checkbox inline">
+					          	  	          <input type="checkbox" id="inlineCheckbox4" value="option4"> Delete
+					          	  	        </label>
+					          	  	      </div>
+					          	  	    </div>
+					          	  </div>
+					          	  <div class="tab-pane" id="super">
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox1" value="option1" checked> View
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	 <div class="control-group">
+					          	  	  <div class="controls">
+					          	  	    <label class="checkbox inline">
+					          	  	      <input type="checkbox" id="inlineCheckbox2" value="option2" checked> Edit
+					          	  	    </label>
+					          	  	  </div>
+					          	  	</div>
+					          	  	<div class="control-group">
+					          	  	    <div class="controls">
+					          	  	      <label class="checkbox inline">
+					          	  	        <input type="checkbox" id="inlineCheckbox3" value="option3" checked> Publish
+					          	  	      </label>
+					          	  	    </div>
+					          	  	  </div>
+					          	  	  <div class="control-group">
+					          	  	      <div class="controls">
+					          	  	        <label class="checkbox inline">
+					          	  	          <input type="checkbox" id="inlineCheckbox4" value="option4" checked> Delete
+					          	  	        </label>
+					          	  	      </div>
+					          	  	    </div>
+					          	  </div>
+					          	</div>
+				          	</div>
+			          	</div>
+			          </div>
+			      </div>
+			      <div class="btn-toolbar row-even">
+			      	<div class="btn-group">
+				        <button type="submit" class="btn btn-primary">Save changes</button>
+			        </div>
+			        <div class="btn-group">
+			            <button type="reset" class="btn">Cancel</button>
+			        </div>
+			        <div class="btn-group pull-right">
+			        	<a href="#" class="btn"><i class="icon-eye-open"></i> Preview</a>
+			        </div>
+			      </div>
+			    </fieldset>
+			  </form>
+			<!-- End Placeholder -->
+		</div>
+	</div>
+	<hr />
+	<div class="footer"> </div>
+</div>
+<!-- Le javascript --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../../assets/js/jquery-1.7.1.min.js"></script> 
+<script src="../../../assets/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown()
+  $('.tip').tooltip()
+  $('.collapse').collapse('show')
+  $('#myModal').modal('hide')
+  $('.typeahead').typeahead()
+  $('.tabs').button()
+  $(".alert-message").alert()
+  $(window).bind("load resize", function() {
+   var windowHeight = "height:"+($(window).height()-45)+"px"; // height of full document
+   var windowWidth = "width:"+($(window).width()-30)+"px"; // width of full document
+   var editorHeight = "height:"+($(window).height()-500)+"px"; // height of text editor
+   $('.side-nav, .fluid-content.main, .modal.full').attr('style', windowHeight);
+   $('#editor').attr('style', editorHeight);
+  });
+</script>
+</body>
+</html>

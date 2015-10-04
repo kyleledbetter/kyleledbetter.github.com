@@ -1,0 +1,152 @@
+//
+// Tags
+// --------------------------------------------------
+.tag-container {
+	.tags {
+		list-style: none;
+		margin: 5px 0 0 0;
+		overflow: hidden;
+		padding: 0;
+
+			li {
+			float: left;
+			}
+	}
+
+	.tag {
+		font-size: 11px;
+		background: darken(@list-group-bg, 9%);
+		border-radius: 3px 0 0 3px;
+		color: #999;
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		padding: 0 17px 0 20px;
+		position: relative;
+		margin: 0 5px 5px 0;
+		text-decoration: none;
+		.transition (color 0.2s);
+	}
+
+	.tag::before {
+		background: @list-group-bg;
+		border-radius: 10px;
+		box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+		content: '';
+		height: 6px;
+		left: 10px;
+		position: absolute;
+		width: 6px;
+		top: 6px;
+	}
+
+	.tag::after {
+		background: @list-group-bg;
+		border-bottom: 10px solid transparent;
+		border-left: 7px solid darken(@list-group-bg, 9%);
+		border-top: 10px solid transparent;
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.list-group-item.active {
+		.tag::before,
+		.tag::after {
+			background: @list-group-active-bg;
+		}
+	}
+
+	.tag:hover {
+		background-color: @gray;
+		color: white;
+		text-decoration: none;
+	}
+
+	.tag:hover::after {
+		border-left-color: @gray;
+	}
+}
+
+/* Tags in Aside */
+.aside {
+	.tags {
+		list-style: none;
+		margin: 5px 0 0 0;
+		overflow: hidden;
+		padding: 0;
+
+			li {
+			float: left;
+			}
+	}
+
+	.tag {
+		font-size: 11px;
+		background: darken(@list-group-bg, 9%);
+		border-radius: 3px 0 0 3px;
+		color: #999;
+		display: inline-block;
+		height: 20px;
+		line-height: 20px;
+		padding: 0 17px 0 20px;
+		position: relative;
+		margin: 0 5px 5px 0;
+		text-decoration: none;
+		.transition (color 0.2s);
+	}
+
+	.tag::before {
+		background: @list-group-bg;
+		border-radius: 10px;
+		box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+		content: '';
+		height: 6px;
+		left: 10px;
+		position: absolute;
+		width: 6px;
+		top: 6px;
+	}
+
+	.tag::after {
+		background: @list-group-bg;
+		border-bottom: 10px solid transparent;
+		border-left: 7px solid darken(@list-group-bg, 9%);
+		border-top: 10px solid transparent;
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.list-group-item.active {
+		.tag::before,
+		.tag::after {
+			background: @list-group-active-bg;
+		}
+	}
+
+	.tag:hover {
+		background-color: @gray;
+		color: white;
+		text-decoration: none;
+	}
+
+	.tag:hover::after {
+		border-left-color: @gray;
+	}
+	
+	.tag {
+		&::before,
+		&::after {
+			background: darken(@navbar-inverse-bg, 10%);
+		}
+		&:hover {
+			color: white;
+		}
+		&:hover::after {
+			border-left-color: darken(@gray, 3%);
+		}
+	}
+}
